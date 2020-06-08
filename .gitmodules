@@ -1,0 +1,24 @@
+[submodule "awesome-container-links/jessfraz-dockerfiles"]
+	path = awesome-container-links/jessfraz-dockerfiles
+	url = https://github.com/jessfraz/dockerfiles
+[submodule "awesome-container-links/mrorgues-dockerfiles"]
+	path = awesome-container-links/mrorgues-dockerfiles
+	url = https://github.com/mrorgues/dockerfiles.git
+[submodule "awesome-container-links/continuouspipe-dockerfiles"]
+	path = awesome-container-links/continuouspipe-dockerfiles
+	url = https://github.com/continuouspipe/dockerfiles.git
+[submodule "awesome-container-links/elastic-dockerfiles"]
+	path = awesome-container-links/elastic-dockerfiles
+	url = https://github.com/elastic/dockerfiles.git
+[submodule "awesome-container-links/nickstenning-dockerfiles"]
+	path = awesome-container-links/nickstenning-dockerfiles
+	url = https://github.com/nickstenning/dockerfiles
+[submodule "awesome-container-links/demisto-dockerfiles"]
+	path = awesome-container-links/demisto-dockerfiles
+	url = https://github.com/demisto/dockerfiles
+[submodule "awesome-container-links/zavolanlab-dockerfiles"]
+	path = awesome-container-links/zavolanlab-dockerfiles
+	url = https://github.com/zavolanlab/Dockerfiles.git
+[submodule "awesome-container-links/hms-dbmi-docker-images"]
+	path = awesome-container-links/hms-dbmi-docker-images
+	url = https://github.com/hms-dbmi/docker-images
