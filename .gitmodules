@@ -22,3 +22,15 @@
 [submodule "awesome-container-links/hms-dbmi-docker-images"]
 	path = awesome-container-links/hms-dbmi-docker-images
 	url = https://github.com/hms-dbmi/docker-images
+[submodule "oci-repos/7error-docker-harbor"]
+	path = oci-repos/7error-docker-harbor
+	url = https://github.com/7error/docker-harbor.git
+[submodule "oci-repos/bitnami/bitnami-docker-harbor-portal"]
+	path = oci-repos/bitnami/bitnami-docker-harbor-portal
+	url = https://github.com/bitnami/bitnami-docker-harbor-portal
+[submodule "oci-repos/bitnami/bitnami-docker-harbor-registry"]
+	path = oci-repos/bitnami/bitnami-docker-harbor-registry
+	url = https://github.com/bitnami/bitnami-docker-harbor-registry.git
+[submodule "oci-repos/bitnami/bitnami-docker-harbor-registryctl"]
+	path = oci-repos/bitnami/bitnami-docker-harbor-registryctl
+	url = https://github.com/bitnami/bitnami-docker-harbor-registryctl.git
