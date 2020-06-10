@@ -25,12 +25,12 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "vhc-xfce"
+            "tag": "hamster-xfce"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "vhc-xfce.tar"
+            "path": "hamster-xfce.tar"
         }
     ] ],
     "Variables": {

@@ -16,8 +16,6 @@
              "/bin/yum update -y",
              "/bin/yum groupinstall -y Xfce",
              "/bin/yum install -y vym",
-             "/bin/yum install -y hamster-time-tracker",
-             "/bin/yum install -y cherrytree"
         ]
         }
     ],
@@ -25,12 +23,12 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "vhc-xfce"
+            "tag": "vym-xfce"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "vhc-xfce.tar"
+            "path": "vym-xfce.tar"
         }
     ] ],
     "Variables": {
