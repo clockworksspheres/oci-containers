@@ -1,10 +1,10 @@
-# oci-containers
+#oci-containers
 collection of other very useful container repos, as well as customized tool containers
 
 
-# Container best practices
+## Container best practices
 
-## Docker best practices:
+### Docker best practices:
 
 https://www.datree.io/resources/docker-best-practices
 
@@ -26,7 +26,7 @@ https://medium.com/@BeNitinAgarwal/best-practices-for-working-with-dockerfiles-f
 
 
 
-## Container best practices:
+### Container best practices:
 
 https://cloud.google.com/solutions/best-practices-for-building-containers
 
