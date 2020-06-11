@@ -31,3 +31,8 @@ https://medium.com/@BeNitinAgarwal/best-practices-for-working-with-dockerfiles-f
 https://cloud.google.com/solutions/best-practices-for-building-containers
 
 
+### Project for inspecting and cleaning containers:
+
+https://github.com/wagoodman/dive
+
+

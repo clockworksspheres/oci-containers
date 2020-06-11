@@ -1,0 +1,39 @@
+{
+    "builders": [{
+        "type": "docker",
+        "image": "centos:7",
+        "commit": "true"
+    }],
+    "provisioners": [
+        {
+        "environment_vars": [
+                "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+        ],
+        "type": "shell",
+        "inline": [
+             "/bin/yum clean all && rm -rf /var/cache/yum && /bin/yum makecache && /bin/yum update -y && /bin/yum install -y deltarpm && /bin/yum install -y epel-release -y && /bin/yum makecache fast && /bin/yum install -y which",
+             "/bin/yum update -y",
+             "/bin/yum install -y xorg-x11-server-Xvfb",
+             "/bin/yum install -y vym",
+             "/bin/yum install -y hamster-time-tracker",
+             "/bin/yum install -y cherrytree"
+        ]
+        }
+    ],
+    "post-processors": [ [
+        {
+            "type": "docker-tag",
+            "repository": "localhost:5000/fredgears",
+            "tag": "vhc-xvfb"
+        },
+        "docker-push",
+        {
+            "type": "docker-save",
+            "path": "vhc-xvfb.tar"
+        }
+    ] ],
+    "Variables": {
+        "vm_name": "medium-native"
+        }
+}
+
