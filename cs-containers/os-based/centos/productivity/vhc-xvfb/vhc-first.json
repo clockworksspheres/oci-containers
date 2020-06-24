@@ -11,11 +11,13 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum clean all && rm -rf /var/cache/yum && /bin/yum makecache && /bin/yum update -y",
-             "/bin/yum install -y deltarpm && /bin/yum install -y epel-release",
-             "/bin/yum makecache fast && /bin/yum install -y which",
+             "/bin/yum install epel-release -y",
+             "/bin/yum install -y deltarpm",
+             "/bin/yum update -y",
+             "/bin/yum install -y which",
              "/bin/yum install -y dbus-x11 dbus-libs dbus dbus-doc dbus-python libvirt-dbus",
              "/bin/yum install -y mesa-dri-drivers mesa-libGL mesa-libGLES mesa-libGLU mesa-libGLw mesa-libgbm mesa-vdpau-drivers mesa-filesystem mesa-libEGL mesa-libOSMesa mesa-libglapi mesa-libxatracker mesa-private-llvm egl-utils glx-utils gtkglarea2",
+             "/bin/yum install -y which",
              "/bin/yum install -y xorg-x11-server-Xvfb",
              "/bin/yum install -y vym",
              "/bin/yum install -y hamster-time-tracker",
@@ -27,16 +29,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "vhc-xvfb"
+            "tag": "vhcxvfbfirst"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "vhc-xvfb.tar"
+            "path": "vhc-xvfb-first.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "medium-native"
+        "vm_name": "medium"
         }
 }
 

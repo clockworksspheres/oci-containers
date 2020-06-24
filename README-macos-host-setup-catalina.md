@@ -1,4 +1,4 @@
-# Setting up macOS for using Docker containers, plus some other useful tools
+# Setting up a macOS for using Docker containers, plus some other useful tools
 
 
 xcode-select --install
@@ -7,19 +7,27 @@ xcode-select --install
 # install homebrew
 # https://brew.sh/
 
-
 brew cask install xquartz
 
 brew install socat
 
 brew install docker
 
-brew install dbus
+#####
 # dbus required for some Qt based apps that might be used in docker containers
+brew install dbus
 
 mkdir -p ~/Library/LaunchAgents
 ln -sfv /usr/local/opt/dbus/*.plist ~/Library/LaunchAgents
 launchctl load ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
+#####
+
+#####
+# host bash environment should include the following:
+# Following fixes title bar problem between docker and X11
+export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+/opt/X11/bin/xhost +${IP}
+# NOTE: it appears to work with the IP set to 127.0.0.1 as well, needs further testing..
 #####
 
 #####
