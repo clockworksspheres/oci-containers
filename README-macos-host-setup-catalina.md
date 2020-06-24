@@ -56,6 +56,8 @@ https://phab.enlightenment.org/w/osx/
 
 https://kde.inoki.cc/2019/07/24/DBus/
 
+https://gist.github.com/vfdev-5/b7685371071036cb739f23b3794b5b83
+
 
 #####
 # useful for managing docker docks:
