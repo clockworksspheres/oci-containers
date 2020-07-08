@@ -11,7 +11,7 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install -y hamster-time-tracker"
+             "/bin/yum install -y intltool gettext hamster-time-tracker"
         ]
         }
     ],
