@@ -1,0 +1,37 @@
+{
+    "builders": [{
+        "type": "docker",
+        "image": "localhost:5000/fredgears:centos7-dbusPlusMesa-xfce",
+        "commit": "true",
+        "changes": [
+                "ENTRYPOINT [\"/usr/bin/hamster-time-tracker\"]"
+            ]
+    }],
+    "provisioners": [
+        {
+        "environment_vars": [
+                "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+        ],
+        "type": "shell",
+        "inline": [
+             "/bin/yum install -y intltool gettext hamster-time-tracker"
+        ]
+        }
+    ],
+    "post-processors": [ [
+        {
+            "type": "docker-tag",
+            "repository": "localhost:5000/fredgears",
+            "tag": "hamster-time-tracker-xfce"
+        },
+        "docker-push",
+        {
+            "type": "docker-save",
+            "path": "hamster-time-tracker-xfce.tar"
+        }
+    ] ],
+    "Variables": {
+        "vm_name": "hamster-time-tracker-medium-native-Xfce"
+        }
+}
+

@@ -1,0 +1,37 @@
+{
+    "builders": [{
+        "type": "docker",
+        "image": "localhost:5000/fredgears:centos-dbusPlusMesa-xvfb",
+        "commit": "true",
+        "changes": [
+                "ENTRYPOINT [\"/usr/bin/cherrytree\"]"
+            ]
+    }],
+    "provisioners": [
+        {
+        "environment_vars": [
+                "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+        ],
+        "type": "shell",
+        "inline": [
+             "/bin/yum install -y cherrytree"
+        ]
+        }
+    ],
+    "post-processors": [ [
+        {
+            "type": "docker-tag",
+            "repository": "localhost:5000/fredgears",
+            "tag": "cherrytree-xfce"
+        },
+        "docker-push",
+        {
+            "type": "docker-save",
+            "path": "cherrytree-xvfb.tar"
+        }
+    ] ],
+    "Variables": {
+        "vm_name": "cherrytree-medium-native-xvfb"
+        }
+}
+

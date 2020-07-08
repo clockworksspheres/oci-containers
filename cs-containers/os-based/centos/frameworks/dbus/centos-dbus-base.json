@@ -1,0 +1,34 @@
+{
+    "builders": [{
+        "type": "docker",
+        "image": "localhost:5000/fredgears:centos-base",
+        "commit": "true"
+    }],
+    "provisioners": [
+        {
+        "environment_vars": [
+                "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+        ],
+        "type": "shell",
+        "inline": [
+             "/bin/yum install -y dbus-x11 dbus-libs dbus dbus-doc dbus-python libvirt-dbus"
+        ]
+        }
+    ],
+    "post-processors": [ [
+        {
+            "type": "docker-tag",
+            "repository": "localhost:5000/fredgears",
+            "tag": "centos7-dbus"
+        },
+        "docker-push",
+        {
+            "type": "docker-save",
+            "path": "centos7-dbus.tar"
+        }
+    ] ],
+    "Variables": {
+        "vm_name": "centos7-dbus-medium"
+        }
+}
+
