@@ -1,8 +1,11 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "centos:7",
-        "commit": "true"
+        "image": "localhost:5000/fredgears:centos7-dbusPlusMesa-xfce",
+        "commit": "true",
+        "changes": [
+                "ENTRYPOINT [\"/usr/bin/cherrytree\"]"
+            ]
     }],
     "provisioners": [
         {
@@ -11,13 +14,7 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install epel-release -y",
-             "/bin/yum install -y deltarpm",
-             "/bin/yum update -y",
-             "/bin/yum groupinstall -y Xfce",
-             "/bin/yum install -y vym",
-             "/bin/yum install -y hamster-time-tracker",
-             "/bin/yum install -y cherrytree"
+             "/bin/yum install -y vym"
         ]
         }
     ],
@@ -25,16 +22,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "hamster-xfce"
+            "tag": "vym-xfce"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "hamster-xfce.tar"
+            "path": "vym-xfce.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "medium-native"
+        "vm_name": "vym-medium-native-Xfce"
         }
 }
 
