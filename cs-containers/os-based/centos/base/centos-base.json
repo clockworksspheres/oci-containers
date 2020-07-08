@@ -1,0 +1,36 @@
+{
+    "builders": [{
+        "type": "docker",
+        "image": "centos:7",
+        "commit": "true"
+    }],
+    "provisioners": [
+        {
+        "environment_vars": [
+                "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
+        ],
+        "type": "shell",
+        "inline": [
+             "/bin/yum clean all && rm -rf /var/cache/yum && /bin/yum makecache && /bin/yum update -y",
+             "/bin/yum install -y deltarpm && /bin/yum install -y epel-release",
+             "/bin/yum makecache fast && /bin/yum groups mark convert && /bin/yum install -y which"
+        ]
+        }
+    ],
+    "post-processors": [ [
+        {
+            "type": "docker-tag",
+            "repository": "localhost:5000/fredgears",
+            "tag": "centos-base"
+        },
+        "docker-push",
+        {
+            "type": "docker-save",
+            "path": "centos-base.tar"
+        }
+    ] ],
+    "Variables": {
+        "vm_name": "centos-base"
+        }
+}
+

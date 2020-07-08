@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "centos:7",
+        "image": "localhost:5000/fredgears:centos-xvfb",
         "commit": "true"
     }],
     "provisioners": [
@@ -11,13 +11,8 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install epel-release -y",
-             "/bin/yum install -y deltarpm",
-             "/bin/yum update -y",
-             "/bin/yum groupinstall -y Xfce",
-             "/bin/yum install -y vym",
-             "/bin/yum install -y hamster-time-tracker",
-             "/bin/yum install -y cherrytree"
+             "/bin/yum install -y dbus-x11 dbus-libs dbus dbus-doc dbus-python libvirt-dbus",
+             "/bin/yum install -y mesa-dri-drivers mesa-libGL mesa-libGLES mesa-libGLU mesa-libGLw mesa-libgbm mesa-vdpau-drivers mesa-filesystem mesa-libEGL mesa-libOSMesa mesa-libglapi mesa-libxatracker mesa-private-llvm egl-utils glx-utils gtkglarea2",
         ]
         }
     ],
@@ -25,16 +20,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "cherrytree-xfce"
+            "tag": "centos7dbusPlusMesa"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "cherrytree-xfce.tar"
+            "path": "centos7dbusPlusMesa.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "medium-native"
+        "vm_name": "ntos7--medium"
         }
 }
 
