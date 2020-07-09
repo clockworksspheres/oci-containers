@@ -14,6 +14,17 @@ brew install socat
 brew install docker
 
 #####
+# install podman and skopeo (rhedhat oci mangement tools)
+
+brew cask install podman
+
+brew install skopeo
+#
+# to copy an image from docker to local docker repo (once it's set up)
+# skopeo copy --dest-tls-verify=false docker-daemon:docker.io/centos:7 docker://localhost:5000/centos:7
+#####
+
+#####
 # dbus required for some Qt based apps that might be used in docker containers
 brew install dbus
 

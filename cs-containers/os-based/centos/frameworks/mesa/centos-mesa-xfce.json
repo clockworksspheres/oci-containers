@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos-base",
+        "image": "localhost:5000/fredgears:centos-xfce",
         "commit": "true"
     }],
     "provisioners": [
@@ -11,7 +11,7 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install -y xorg-x11-server-Xvfb"
+             "/bin/yum install -y mesa-dri-drivers mesa-libGL mesa-libGLES mesa-libGLU mesa-libGLw mesa-libgbm mesa-vdpau-drivers mesa-filesystem mesa-libEGL mesa-libOSMesa mesa-libglapi mesa-libxatracker mesa-private-llvm egl-utils glx-utils gtkglarea2"
         ]
         }
     ],
@@ -19,16 +19,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "centos-xvfb"
+            "tag": "centos-mesa-xfce"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos-xvfb.tar"
+            "path": "centos-mesa-xfce.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "centos-xvfb-medium-native"
+        "vm_name": "centos-mesa-xfce-medium"
         }
 }
 

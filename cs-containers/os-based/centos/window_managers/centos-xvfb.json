@@ -11,7 +11,7 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum groups mark convert && /bin/yum groupinstall -y \"Server with GUI\""
+             "/bin/yum install -y xorg-x11-server-Xvfb xorg-x11-apps"
         ]
         }
     ],
@@ -19,16 +19,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "centos-xfce"
+            "tag": "centos-xvfb"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos-xfce.tar"
+            "path": "centos-xvfb.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "centos-xfce-medium-native"
+        "vm_name": "centos-xvfb-medium-native"
         }
 }
 

@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos-dbusPlusMesa-xvfb",
+        "image": "localhost:5000/fredgears:centos7-dbusPlusMesa-xvfb",
         "commit": "true",
         "changes": [
                 "ENTRYPOINT [\"/usr/bin/cherrytree\"]"
