@@ -21,16 +21,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "centos-base"
+            "tags": "centos-base-wg"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos-base.tar"
+            "path": "centos-base-wg.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "centos-base"
+        "vm_name": "centos-base-wg"
         }
 }
 

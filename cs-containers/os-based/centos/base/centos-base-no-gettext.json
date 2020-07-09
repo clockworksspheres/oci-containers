@@ -21,7 +21,7 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "centos-base"
+            "tags": "centos-base"
         },
         "docker-push",
         {
