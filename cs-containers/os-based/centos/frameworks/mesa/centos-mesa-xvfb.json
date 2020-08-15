@@ -1,11 +1,8 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos7-dbusPlusMesa-xvfb",
-        "commit": "true",
-        "changes": [
-                "ENTRYPOINT [\"/usr/bin/cherrytree\"]"
-            ]
+        "image": "localhost:5000/fredgears:centos-xvfb",
+        "commit": "true"
     }],
     "provisioners": [
         {
@@ -13,11 +10,8 @@
                 "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
         ],
         "type": "shell",
-        "scripts": [
-        "./scripts/install-cherrytree.sh",
-        "./scripts/waitForOsBufferFlush.sh",
-        "./scripts/setEnvironment.sh",
-        "./scripts/waitForOsBufferFlush.sh"
+        "inline": [
+             "/bin/yum install -y mesa-dri-drivers mesa-libGL mesa-libGLES mesa-libGLU mesa-libGLw mesa-libgbm mesa-vdpau-drivers mesa-filesystem mesa-libEGL mesa-libOSMesa mesa-libglapi mesa-libxatracker mesa-private-llvm egl-utils glx-utils gtkglarea2"
         ]
         }
     ],
@@ -25,16 +19,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "cherrytree-xvfb"
+            "tag": "centos-mesa-xvfb"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "cherrytree-xvfb.tar"
+            "path": "centos-mesa-xvfb.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "cherrytree-medium-native-xvfb"
+        "vm_name": "centos-mesa-xvfb-medium"
         }
 }
 

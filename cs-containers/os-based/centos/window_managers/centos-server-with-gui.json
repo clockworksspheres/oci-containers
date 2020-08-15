@@ -1,11 +1,8 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos7-dbusPlusMesa-xvfb",
-        "commit": "true",
-        "changes": [
-                "ENTRYPOINT [\"/usr/bin/cherrytree\"]"
-            ]
+        "image": "localhost:5000/fredgears:centos-base",
+        "commit": "true"
     }],
     "provisioners": [
         {
@@ -13,11 +10,8 @@
                 "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
         ],
         "type": "shell",
-        "scripts": [
-        "./scripts/install-cherrytree.sh",
-        "./scripts/waitForOsBufferFlush.sh",
-        "./scripts/setEnvironment.sh",
-        "./scripts/waitForOsBufferFlush.sh"
+        "inline": [
+             "/bin/yum groups mark convert && /bin/yum groupinstall -y \"Server with GUI\""
         ]
         }
     ],
@@ -25,16 +19,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "cherrytree-xvfb"
+            "tag": "centos-server-with-gui"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "cherrytree-xvfb.tar"
+            "path": "centos-server-with-gui.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "cherrytree-medium-native-xvfb"
+        "vm_name": "centos-server-with-gui-medium-native"
         }
 }
 

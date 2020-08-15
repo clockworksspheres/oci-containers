@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos-xvfb",
+        "image": "localhost:5000/fredgears:centos-base",
         "commit": "true"
     }],
     "provisioners": [
