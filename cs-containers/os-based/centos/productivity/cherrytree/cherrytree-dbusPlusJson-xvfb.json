@@ -13,8 +13,11 @@
                 "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin"
         ],
         "type": "shell",
-        "inline": [
-             "/bin/yum install -y cherrytree"
+        "scripts": [
+        "./scripts/install-cherrytree.sh",
+        "./scripts/waitForOsBufferFlush.sh",
+        "./scripts/setEnvironment.sh",
+        "./scripts/waitForOsBufferFlush.sh"
         ]
         }
     ],
@@ -22,7 +25,7 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "cherrytree-xfce"
+            "tag": "cherrytree-xvfb"
         },
         "docker-push",
         {

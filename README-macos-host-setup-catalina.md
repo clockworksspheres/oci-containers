@@ -48,6 +48,7 @@ launchctl load ~/Library/LaunchAgents/org.freedesktop.dbus-session.plist
 ## host bash environment should include the following:
 ## Following fixes title bar problem between docker and X11
     export IP=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}')
+    export DISPLAY=$(${IP}:0)
     /opt/X11/bin/xhost +${IP}
 ## NOTE: it appears to work with the IP set to 127.0.0.1 as well, needs further testing..
 
