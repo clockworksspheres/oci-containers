@@ -25,16 +25,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "cherrytree-xfce"
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "cherrytree-xfce.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "cherrytree-medium-native-Xfce"
+        "vm_name": "cherrytree-xfce"
         }
 }
 

@@ -20,16 +20,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "centos7-dbusPlusMesa-xvfb"
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos7-dbusPlusMesa-xvfb.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "centos7-dbusPlusMesa-xvfb-medium"
+        "vm_name": "centos7-dbusPlusMesa-xvfb"
         }
 }
 

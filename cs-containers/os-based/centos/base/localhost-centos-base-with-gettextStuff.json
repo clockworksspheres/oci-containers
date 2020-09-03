@@ -1,11 +1,8 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos7-dbusPlusMesa-xfce",
-        "commit": "true",
-        "changes": [
-                "ENTRYPOINT [\"/usr/bin/hamster-time-tracker\"]"
-            ]
+        "image": "localhost:5000/centos:7",
+        "commit": "true"
     }],
     "provisioners": [
         {
@@ -14,7 +11,9 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install -y intltool gettext hamster-time-tracker"
+             "/bin/yum clean all && rm -rf /var/cache/yum && /bin/yum makecache && /bin/yum update -y",
+             "/bin/yum install -y deltarpm && /bin/yum install -y epel-release",
+             "/bin/yum makecache fast && /bin/yum groups mark convert && /bin/yum install -y which gettext python-gettext desktop-file-utils, xdg-utils"
         ]
         }
     ],
@@ -22,16 +21,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "{{user `vm_name`}}"
+            "tags": "centos-base-wg"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "{{user `vm_name`}}.tar"
+            "path": "centos-base-wg.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "hamster-time-tracker-xfce"
+        "vm_name": "centos-base-wg"
         }
 }
 

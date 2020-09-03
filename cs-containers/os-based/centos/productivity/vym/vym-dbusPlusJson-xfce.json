@@ -25,16 +25,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "vym-xfce"
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "vym-xfce.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "vym-medium-native-Xfce"
+        "vm_name": "vym-xfce"
         }
 }
 

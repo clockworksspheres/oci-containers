@@ -19,16 +19,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "centos7-dbus-xfce"
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos7-dbus-xfce.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "centos7-dbus-xfce-medium"
+        "vm_name": "centos7-dbus-xfce"
         }
 }
 

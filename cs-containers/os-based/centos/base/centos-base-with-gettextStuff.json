@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/centos:7",
+        "image": "centos:7",
         "commit": "true"
     }],
     "provisioners": [
@@ -21,7 +21,7 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tags": "centos-base-wg"
+            "tags": "centos-base"
         },
         "docker-push",
         {

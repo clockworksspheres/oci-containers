@@ -11,7 +11,7 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum groupinstall -y Xfce"
+             "yum groupinstall -y Xfce"
         ]
         }
     ],
@@ -19,16 +19,16 @@
         {
             "type": "docker-tag",
             "repository": "localhost:5000/fredgears",
-            "tag": "centos-xfce"
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos-xfce.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "centos-xfce-medium-native"
+        "vm_name": "centos-xfce"
         }
 }
 
