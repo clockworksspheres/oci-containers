@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos-xvfb",
+        "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos-xvfb",
         "commit": "true"
     }],
     "provisioners": [
@@ -18,7 +18,7 @@
     "post-processors": [ [
         {
             "type": "docker-tag",
-            "repository": "localhost:5000/fredgears",
+            "repository": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}",
             "tag": "{{user `vm_name`}}"
         },
         "docker-push",
@@ -29,6 +29,9 @@
     ] ],
     "Variables": {
         "vm_name": "centos-mesa-xvfb"
+	"registry_host": "localhost",
+	"registry_port": "5000",
+	"docker_registry_user": "fredgears"
         }
 }
 

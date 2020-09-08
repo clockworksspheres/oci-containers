@@ -580,4 +580,29 @@ This chapter has worked through the creation and management of Linux Containers 
 #
 # Running the cs-containers
 
+docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -e DISPLAY=${DISPLAY}  localhost:5000/fredgears:vym-xfce
+
+# NOTE:
+#
+### setting the container's environment
+#
+# -e DISPLAY=${DISPLAY}
+# set the dock environment to the host's display
+#
+# -e XDG_RUNTIME_DIR=/tmp
+#
+# -e QT_X11_NO_MITSHM=1
+#
+### sharing volumes/files between host and container
+# 
+# -v /etc/machine-id:/etc/machine-id:ro
+# share the host's dbus machine-id as the container's dbus machine-id - needed for Qt
+#
+
+###
+# Docker commands:
+docker load -i <tarball>  # to load an container image
+
+
 #####
+
