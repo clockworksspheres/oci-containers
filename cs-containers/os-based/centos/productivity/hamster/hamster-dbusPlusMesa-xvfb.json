@@ -4,7 +4,7 @@
         "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos7-dbusPlusMesa-xvfb",
         "commit": "true",
         "changes": [
-                "ENTRYPOINT [\"/usr/bin/hamster-time-tracker\"]"
+                "ENTRYPOINT [\"/usr/bin/hamster\"]"
             ]
     }],
     "provisioners": [
@@ -31,7 +31,7 @@
         }
     ] ],
     "Variables": {
-        "vm_name": "hamster-time-tracker-xvfb"
+        "vm_name": "hamster",
 	"registry_host": "localhost",
 	"registry_port": "5000",
 	"docker_registry_user": "fredgears"
