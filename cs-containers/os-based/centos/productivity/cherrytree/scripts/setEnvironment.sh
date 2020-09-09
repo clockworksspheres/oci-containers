@@ -2,16 +2,24 @@
 
 #####
 # Define user home as in future, it won't always be root
-USERHOME="/opt/projects"
+PROJECTHOME="/opt/projects"
 
 #####
 # Create required user cache directories
-mkdir -p $USERHOME/.local/share
-mkdir -p $USERHOME/.config/cherrytree
+mkdir -p $PROJECTHOME/.local/share
+mkdir -p $PROJECTHOME/.config/cherrytree
+
+#####
+# sleep and wait cycle
+sleep 2
+sync; sync; sync;
+sleep 2
+sync; sync; sync;
+sleep 2
 
 #####
 # Set the cherrytree config file content
-cat <<EOF > $USERHOME/.config/cherrytree/config.cfg
+cat <<EOF > $PROJECTHOME/.config/cherrytree/config.cfg
 [state]
 file_dir = /opt/projects
 toolbar_visible = True
@@ -144,6 +152,14 @@ journal_day_format = %d %a
 [codexec_ext]
 
 EOF
+
+#####
+# sleep and wait cycle
+sleep 2
+sync; sync; sync;
+sleep 2
+sync; sync; sync;
+sleep 2
 
 exit 0
 
