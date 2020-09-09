@@ -611,6 +611,13 @@ docker container stop <container-id>
 #####
 
 #####
+# Example commands (run in a bash shell):
+
+docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECT_HOME}:/opt/projects:rw -e DISPLAY=${DISPLAY}  --user=$(`id --user`):$(`id --group`) localhost:5000/fredgears:cherrytree-xvfb
+
+#####
+
+#####
 # troubleshooting
 #
 # Q. Getting message: :Could not connect to an X display."
@@ -637,10 +644,26 @@ xauth add ${HOST}:0 . $(xxd -l 16 -p /dev/urandom)
 
 # To view a listing of the .Xauthority file, enter the following 
 xauth list 
+#
 ###
 #
-# Q.
+# Q. Is there a quick script I can run to see if my docker infrastructure is up correctly??
 #
-# A.
+# A. Yes, try this, from stackoverflow:  
+# https://stackoverflow.com/questions/16296753/can-you-run-gui-applications-in-a-docker-container/25280523#25280523
+#
+
+docker build -t xeyes - << __EOF__
+FROM debian
+RUN apt-get update
+RUN apt-get install -qqy x11-apps
+ENV DISPLAY :0
+CMD xeyes
+__EOF__
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+docker run -ti -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH xeyes
+
 #
 #####
