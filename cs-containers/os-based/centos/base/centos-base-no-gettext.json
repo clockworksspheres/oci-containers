@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/centos:7",
+        "image": "{{user `registry_host`}}:{{user `registry_port`}}/centos:7",
         "commit": "true"
     }],
     "provisioners": [
@@ -20,17 +20,20 @@
     "post-processors": [ [
         {
             "type": "docker-tag",
-            "repository": "localhost:5000/fredgears",
-            "tags": "centos-base"
+            "repository": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}",
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos-base.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
         "vm_name": "centos-base"
+	"registry_host": "localhost",
+	"registry_port": "5000",
+	"docker_registry_user": "fredgears"
         }
 }
 

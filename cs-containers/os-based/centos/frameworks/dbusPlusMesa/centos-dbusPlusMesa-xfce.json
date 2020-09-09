@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos-xfce",
+        "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos-xfce",
         "commit": "true"
     }],
     "provisioners": [
@@ -19,17 +19,20 @@
     "post-processors": [ [
         {
             "type": "docker-tag",
-            "repository": "localhost:5000/fredgears",
-            "tag": "centos7-dbusPlusMesa-xfce"
+            "repository": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}",
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos7-dbusPlusMesa-xfce.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "centos7-dbusPlusMesa-xfce-medium"
+        "vm_name": "centos7-dbusPlusMesa-xfce",
+	"registry_host": "localhost",
+	"registry_port": "5000",
+	"docker_registry_user": "fredgears"
         }
 }
 

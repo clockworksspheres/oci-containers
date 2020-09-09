@@ -1,11 +1,8 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos7-dbusPlusMesa-xfce",
-        "commit": "true",
-        "changes": [
-                "ENTRYPOINT [\"/usr/bin/hamster\"]"
-            ]
+        "image": "{{user `registry_host`}}:{{user `registry_port`}}/centos:7",
+        "commit": "true"
     }],
     "provisioners": [
         {
@@ -14,7 +11,9 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install -y intltool gettext hamster-time-tracker"
+             "/bin/yum clean all && rm -rf /var/cache/yum && /bin/yum makecache && /bin/yum update -y",
+             "/bin/yum install -y deltarpm && /bin/yum install -y epel-release",
+             "/bin/yum makecache fast && /bin/yum groups mark convert && /bin/yum install -y which gettext python-gettext desktop-file-utils, xdg-utils"
         ]
         }
     ],
@@ -31,7 +30,7 @@
         }
     ] ],
     "Variables": {
-        "vm_name": "hamster",
+        "vm_name": "centos-base"
 	"registry_host": "localhost",
 	"registry_port": "5000",
 	"docker_registry_user": "fredgears"

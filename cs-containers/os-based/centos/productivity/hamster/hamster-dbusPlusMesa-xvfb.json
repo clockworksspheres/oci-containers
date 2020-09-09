@@ -1,8 +1,11 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos7-dbusPlusMesa-xvfb",
-        "commit": "true"
+        "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos7-dbusPlusMesa-xvfb",
+        "commit": "true",
+        "changes": [
+                "ENTRYPOINT [\"/usr/bin/hamster\"]"
+            ]
     }],
     "provisioners": [
         {
@@ -18,17 +21,20 @@
     "post-processors": [ [
         {
             "type": "docker-tag",
-            "repository": "localhost:5000/fredgears",
-            "tag": "hamster-time-tracker-xvfb"
+            "repository": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}",
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "hamster-time-tracker-xvfb.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "hamster-time-tracker-medium-native-xvfb"
+        "vm_name": "hamster",
+	"registry_host": "localhost",
+	"registry_port": "5000",
+	"docker_registry_user": "fredgears"
         }
 }
 

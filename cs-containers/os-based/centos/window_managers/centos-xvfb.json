@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "localhost:5000/fredgears:centos-base",
+        "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos-base",
         "commit": "true"
     }],
     "provisioners": [
@@ -11,24 +11,27 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install -y xorg-x11-server-Xvfb xorg-x11-apps"
+             "yum install -y xorg-x11-server-Xvfb xorg-x11-apps"
         ]
         }
     ],
     "post-processors": [ [
         {
             "type": "docker-tag",
-            "repository": "localhost:5000/fredgears",
-            "tag": "centos-xvfb"
+            "repository": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}",
+            "tag": "{{user `vm_name`}}"
         },
         "docker-push",
         {
             "type": "docker-save",
-            "path": "centos-xvfb.tar"
+            "path": "{{user `vm_name`}}.tar"
         }
     ] ],
     "Variables": {
-        "vm_name": "centos-xvfb-medium-native"
+        "vm_name": "centos-xvfb",
+	"registry_host": "localhost",
+	"registry_port": "5000",
+	"docker_registry_user": "fredgears"
         }
 }
 
