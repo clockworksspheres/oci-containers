@@ -613,7 +613,9 @@ docker container stop <container-id>
 #####
 # Example commands (run in a bash shell):
 
-docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECT_HOME}:/opt/projects:rw -e DISPLAY=${DISPLAY}  --user=$(`id --user`):$(`id --group`) localhost:5000/fredgears:cherrytree-xvfb
+docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECTHOME}:/opt/projects:rw -e DISPLAY=${DISPLAY}  --user=$(`id --user`):$(`id --group`) localhost:5000/fredgears:cherrytree-xvfb
+
+docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECTHOME}:/opt/projects:rw -e DISPLAY=${DISPLAY}  localhost:5000/fredgears:cherrytree-xfce
 
 #####
 
