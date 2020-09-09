@@ -4,6 +4,7 @@
         "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos7-dbusPlusMesa-xvfb",
         "commit": "true",
         "changes": [
+		"WORKDIR /opt/projects",
                 "ENTRYPOINT [\"/usr/bin/cherrytree\"]"
             ]
     }],
