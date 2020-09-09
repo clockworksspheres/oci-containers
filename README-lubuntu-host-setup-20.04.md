@@ -1,4 +1,4 @@
-
+2020-09-09_1205
 #####
 #Setting up Docker
 # https://docs.docker.com/engine/install/ubuntu/
@@ -603,6 +603,44 @@ docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:
 # Docker commands:
 docker load -i <tarball>  # to load an container image
 
+<registry issues>
+docker container list
+docker container stop <container-id>
+<start the registry again...>
 
 #####
 
+#####
+# troubleshooting
+#
+# Q. Getting message: :Could not connect to an X display."
+###
+# A. check out these commands:
+#
+# Set the display variable
+export DISPLAY=:0
+#
+# Be wary of the security remifications - but it may be useful to:
+xhost +SI:localuser:root
+#
+# Rename the existing .Xauthority file by running the following command
+mv .Xauthority old.Xauthority 
+#
+# xauth with complain unless ~/.Xauthority exists
+touch ~/.Xauthority
+
+# only this one key is needed for X11 over SSH 
+xauth generate :0 . trusted 
+
+# generate our own key, xauth requires 128 bit hex encoding
+xauth add ${HOST}:0 . $(xxd -l 16 -p /dev/urandom)
+
+# To view a listing of the .Xauthority file, enter the following 
+xauth list 
+###
+#
+# Q.
+#
+# A.
+#
+#####

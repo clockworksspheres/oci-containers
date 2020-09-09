@@ -28,7 +28,7 @@
         }
     ] ],
     "Variables": {
-        "vm_name": "centos-mesa-xfce"
+        "vm_name": "centos-mesa-xfce",
 	"registry_host": "localhost",
 	"registry_port": "5000",
 	"docker_registry_user": "fredgears"

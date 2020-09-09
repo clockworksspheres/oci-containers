@@ -30,7 +30,7 @@
         }
     ] ],
     "Variables": {
-        "vm_name": "centos-base-wg"
+        "vm_name": "centos-base",
 	"registry_host": "localhost",
 	"registry_port": "5000",
 	"docker_registry_user": "fredgears"

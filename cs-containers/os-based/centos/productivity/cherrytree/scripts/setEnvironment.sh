@@ -2,7 +2,7 @@
 
 #####
 # Define user home as in future, it won't always be root
-USERHOME="/root"
+USERHOME="/opt/projects"
 
 #####
 # Create required user cache directories
@@ -13,7 +13,7 @@ mkdir -p $USERHOME/.config/cherrytree
 # Set the cherrytree config file content
 cat <<EOF > $USERHOME/.config/cherrytree/config.cfg
 [state]
-file_dir = /root/project
+file_dir = /opt/projects
 toolbar_visible = True
 win_is_maximized = False
 win_position_x = 564
@@ -24,7 +24,6 @@ hpaned_pos = 170
 tree_visible = True
 node_path = 0
 cursor_position = 0
-doc_0 = /root/project/MitreChat/MireChat.ctb
 pick_dir_import = 
 pick_dir_export = 
 pick_dir_file = 

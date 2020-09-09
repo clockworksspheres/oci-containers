@@ -34,7 +34,7 @@
         }
     ] ],
     "Variables": {
-        "vm_name": "vym-xvfb"
+        "vm_name": "vym-xvfb",
 	"registry_host": "localhost",
 	"registry_port": "5000",
 	"docker_registry_user": "fredgears"

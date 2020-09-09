@@ -29,7 +29,7 @@
         }
     ] ],
     "Variables": {
-        "vm_name": "centos7-dbusPlusMesa-xfce"
+        "vm_name": "centos7-dbusPlusMesa-xfce",
 	"registry_host": "localhost",
 	"registry_port": "5000",
 	"docker_registry_user": "fredgears"
