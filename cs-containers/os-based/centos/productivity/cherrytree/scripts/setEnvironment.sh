@@ -3,7 +3,7 @@
 #####
 # Define user home as in future, it won't always be root
 PROJECTHOME="/opt/projects"
-
+HOME="/opt/projects"
 #####
 # Create required user cache directories
 mkdir -p $PROJECTHOME/.local/share
