@@ -2,17 +2,18 @@
 
 #####
 # Define user home as in future, it won't always be root
-USERHOME="/root"
+PROJECTHOME="/opt/projects"
+HOME="/opt/projects"
 
 #####
 # Create required user cache directories
-mkdir -p $USERHOME/.dbus/session-bus
-mkdir -p $USERHOME/.local/share
-mkdir -p $USERHOME/.config/InSilmaril
+mkdir -p $PROJECTHOME/.dbus/session-bus
+mkdir -p $PROJECTHOME/.local/share
+mkdir -p $PROJECTHOME/.config/InSilmaril
 
 #####
 # Set the vym config file content
-cat <<EOF > $USERHOME/.config/InSilmaril/vym.conf
+cat <<EOF > $PROJECTHOME/.config/InSilmaril/vym.conf
 [downloads]
 cookies\vymID\value=@ByteArray(5e40c3d704a25)
 enabled=true

@@ -4,6 +4,8 @@
         "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos7-dbusPlusMesa-xvfb",
         "commit": "true",
         "changes": [
+		"ENV HOME=/opt/projects",
+		"WORKDIR /opt/projects",
                 "ENTRYPOINT [\"/usr/bin/vym\"]"
             ]
     }],
