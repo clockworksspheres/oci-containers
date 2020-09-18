@@ -10,7 +10,9 @@
 
   NOTE: if using a local docker registry, one can use the command:
 
+```
   docker image list
+```
 
   and one can see “created time”, and the latest created is the last built, or stuck into the registry.
 
