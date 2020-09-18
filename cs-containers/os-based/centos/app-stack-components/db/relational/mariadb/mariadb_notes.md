@@ -144,23 +144,25 @@ Please update Windows 10 to update version 2004 FIRST!
 
 https://docs.microsoft.com/en-us/windows/wsl/install-win10
 
-
 Check if you are using WSL 1 instead of WSL 2...  Please run the following in a powershell window:
 
+```
 PS C:\Users\RKevi> wsl -l -v
   NAME                   STATE           VERSION
 * Ubuntu                 Stopped         1
   docker-desktop-data    Running         2
+```
 
 If you see something like the above - with your linux in the VERSION column saying it's version 1, please make sure there is no linux instance running (close them all out if they are) and run the following:
 
+```
 wsl.exe --set-version Ubuntu 2
+```
 
 This should fix the problem.
 
 Must come after WSL 2 setup
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
-
 
 
