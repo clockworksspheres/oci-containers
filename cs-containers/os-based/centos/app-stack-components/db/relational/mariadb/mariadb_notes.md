@@ -4,7 +4,7 @@
 
   NOTE: sizes do not include the size of the database, only the size of the container.  The container does not house the database file.
 
-  NOTE: prototyping building containers on lubuntu 20.04
+  NOTE: prototyping building containers on lubuntu 20.04 host kernel acting as the docker hypervisor
 
   NOTE: standardizing on mariadb version 10.3, as all repos are capable, and keeping the version of mariadb static helps in comparison.
 
