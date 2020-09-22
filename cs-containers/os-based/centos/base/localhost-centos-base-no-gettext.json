@@ -1,7 +1,7 @@
 {
     "builders": [{
         "type": "docker",
-        "image": "{{user `registry_host`}}:{{user `registry_port`}}/{{user `docker_registry_user`}}:centos-xvfb",
+        "image": "{{user `registry_host`}}:{{user `registry_port`}}/centos:7",
         "commit": "true"
     }],
     "provisioners": [
@@ -11,7 +11,9 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install -y dbus-x11 dbus-libs dbus dbus-doc dbus-python libvirt-dbus && /bin/yum clean all"
+             "/bin/yum clean all && rm -rf /var/cache/yum && /bin/yum makecache && /bin/yum update -y && /bin/yum clean all",
+             "/bin/yum install -y deltarpm && /bin/yum install -y epel-release && /bin/yum clean all",
+             "/bin/yum makecache fast && /bin/yum groups mark convert && /bin/yum install -y which && /bin/yum clean all"
         ]
         }
     ],
@@ -28,7 +30,7 @@
         }
     ] ],
     "Variables": {
-        "vm_name": "centos7-dbus-xvfb",
+        "vm_name": "centos-base",
 	"registry_host": "localhost",
 	"registry_port": "5000",
 	"docker_registry_user": "fredgears"

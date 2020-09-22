@@ -11,7 +11,7 @@
         ],
         "type": "shell",
         "inline": [
-             "yum groupinstall -y Xfce"
+             "yum groupinstall -y Xfce && /bin/yum clean all"
         ]
         }
     ],

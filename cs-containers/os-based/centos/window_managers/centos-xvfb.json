@@ -11,7 +11,7 @@
         ],
         "type": "shell",
         "inline": [
-             "yum install -y xorg-x11-server-Xvfb xorg-x11-apps"
+             "yum install -y xorg-x11-server-Xvfb xorg-x11-apps && /bin/yum clean all"
         ]
         }
     ],

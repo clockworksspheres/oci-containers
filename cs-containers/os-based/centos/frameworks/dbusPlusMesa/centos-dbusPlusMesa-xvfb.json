@@ -11,8 +11,8 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install -y dbus-x11 dbus-libs dbus dbus-doc dbus-python libvirt-dbus",
-             "/bin/yum install -y mesa-dri-drivers mesa-libGL mesa-libGLES mesa-libGLU mesa-libGLw mesa-libgbm mesa-vdpau-drivers mesa-filesystem mesa-libEGL mesa-libOSMesa mesa-libglapi mesa-libxatracker mesa-private-llvm egl-utils glx-utils gtkglarea2"
+             "/bin/yum install -y dbus-x11 dbus-libs dbus dbus-doc dbus-python libvirt-dbus && /bin/yum clean all && /bin/yum clean all",
+             "/bin/yum install -y mesa-dri-drivers mesa-libGL mesa-libGLES mesa-libGLU mesa-libGLw mesa-libgbm mesa-vdpau-drivers mesa-filesystem mesa-libEGL mesa-libOSMesa mesa-libglapi mesa-libxatracker mesa-private-llvm egl-utils glx-utils gtkglarea2 && /bin/yum clean all && /bin/yum clean all"
         ]
         }
     ],

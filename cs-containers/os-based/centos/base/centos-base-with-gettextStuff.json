@@ -11,9 +11,9 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum clean all && rm -rf /var/cache/yum && /bin/yum makecache && /bin/yum update -y",
-             "/bin/yum install -y deltarpm && /bin/yum install -y epel-release",
-             "/bin/yum makecache fast && /bin/yum groups mark convert && /bin/yum install -y which gettext python-gettext desktop-file-utils, xdg-utils"
+             "/bin/yum clean all && rm -rf /var/cache/yum && /bin/yum makecache && /bin/yum update -y && /bin/yum clean all",
+             "/bin/yum install -y deltarpm && /bin/yum install -y epel-release && /bin/yum clean all",
+             "/bin/yum makecache fast && /bin/yum groups mark convert && /bin/yum install -y which gettext python-gettext desktop-file-utils, xdg-utils && /bin/yum clean all"
         ]
         }
     ],

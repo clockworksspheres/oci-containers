@@ -11,7 +11,7 @@
         ],
         "type": "shell",
         "inline": [
-             "/bin/yum install -y dbus-x11 dbus-libs dbus dbus-doc dbus-python libvirt-dbus"
+             "/bin/yum install -y dbus-x11 dbus-libs dbus dbus-doc dbus-python libvirt-dbus && /bin/yum clean all"
         ]
         }
     ],
