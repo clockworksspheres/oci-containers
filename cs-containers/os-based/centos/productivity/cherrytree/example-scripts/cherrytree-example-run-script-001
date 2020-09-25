@@ -1,0 +1,21 @@
+#!/usr/bin/bash
+
+#####
+# Docker env setup
+REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY="/opt/projects/docks"
+
+export XSOCK=/tmp/.X11-unix
+export XAUTH=/tmp/.docker.xauth
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+
+##############
+
+#####
+# clockworksspheres env variables
+
+PROJECTHOME=${HOME}/Documents/res/projects
+
+#####
+
+docker run -ti -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -e XDG_RUNTIME_DIR=/tmp -e QT_X11_NO_MITSHM=1 -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECTHOME}:/opt/projects:rw -e DISPLAY localhost:5000/fredgears:cherrytree-xvfb
+

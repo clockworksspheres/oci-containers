@@ -613,7 +613,16 @@ docker container stop <container-id>
 #####
 # Example commands (run in a bash shell):
 
-docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECT_HOME}:/opt/projects:rw -e DISPLAY=${DISPLAY}  --user=$(`id --user`):$(`id --group`) localhost:5000/fredgears:cherrytree-xvfb
+docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECTHOME}:/opt/projects:rw -e DISPLAY=${DISPLAY}  --user=$(`id --user`):$(`id --group`) localhost:5000/fredgears:cherrytree-xvfb
+
+docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECTHOME}:/opt/projects:rw -e DISPLAY=${DISPLAY}  localhost:5000/fredgears:cherrytree-xfce
+
+
+XSOCK=/tmp/.X11-unix
+XAUTH=/tmp/.docker.xauth
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+
+docker run -ti -v $XSOCK:$XSOCK -v $XAUTH:$XAUTH -e XAUTHORITY=$XAUTH -e XDG_RUNTIME_DIR=/tmp -e QT_X11_NO_MITSHM=1 -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECTHOME}:/opt/projects:rw -e DISPLAY localhost:5000/fredgears:vym-xvfb
 
 #####
 
