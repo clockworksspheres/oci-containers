@@ -34,3 +34,6 @@
 [submodule "oci-repos/bitnami/bitnami-docker-harbor-registryctl"]
 	path = oci-repos/bitnami/bitnami-docker-harbor-registryctl
 	url = https://github.com/bitnami/bitnami-docker-harbor-registryctl.git
+[submodule "maier-packer-templates"]
+	path = awesome-container-links/packer-templates
+	url = https://github.com/maier/packer-templates.git
