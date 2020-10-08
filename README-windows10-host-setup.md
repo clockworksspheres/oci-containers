@@ -40,10 +40,12 @@ https://github.com/microsoft/WSL/issues/4709
 
 Check if you are using WSL 1 instead of WSL 2...  Please run the following in a powershell window:
 
+```
 PS C:\Users\RKevi> wsl -l -v
   NAME                   STATE           VERSION
 * Ubuntu                 Stopped         1
   docker-desktop-data    Running         2
+```
 
 If you see something like the above - with your linux in the VERSION column saying it's version 1, please make sure there is no linux instance running (close them all out if they are) and run the following:
 
