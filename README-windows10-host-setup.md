@@ -15,6 +15,8 @@ Turn on windows features in “Windows Settings” -> “Apps” -> “Apps & Fe
 ## Install Chocolatey
 
 
+
+
 ## Install WSL 2 via Chocolatey
 
 * Installing WSL2 the Chocolatey way (for Windows):
@@ -24,6 +26,22 @@ https://chocolatey.org/packages/wsl2
 
 * Installing Docker the Chocolatey way (for Windows - must do the docker-desktop install):
 https://stefanscherer.github.io/how-to-install-docker-the-chocolatey-way/
+
+## For any software installed by chocolaty, allow it through the windows anti-virus:
+
+### Examples:
+
+  ```
+  Add-MpPreference -ExclusionPath C:\HashiCorp -Verbose   # where Vagrant is installed
+  Add-MpPreference -ExclusionPath %ProgramData%\chocolatey   # where a bunch of chocolatey stuff is installed
+  Add-MpPreference -ExclusionPath C:\tools\vim' -Verbose   # where vim is installed
+  Add-MpPreference -ExclisionPath 'C:\Program Files\Git' -Verbose # where git is installed
+  Add-MpPreference -ExclisionPath 'C:\Program Files\Docker'   # where Docker is installed
+  Add-MpPreference -ExclisionPath 'C:\Program Files\KeePassXC'  # where keepass is installed
+  Add-MpPreference -ExclisionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
+  ```
+
+#### 
 
 
 ## Potentially Useful References:
