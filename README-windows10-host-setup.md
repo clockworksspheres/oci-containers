@@ -61,7 +61,7 @@ https://github.com/microsoft/WSL/issues/4084
 https://www.reddit.com/r/bashonubuntuonwindows/comments/bg2kgo/issues_trying_to_run_ubuntu/
 https://gitmemory.com/issue/microsoft/WSL/4084/499579174
 https://github.com/microsoft/WSL/issues/4709
-
+https://www.assistanz.com/steps-to-configure-private-registry-for-docker-windows-server-2016/
 
 # Older notes that may still be useful
 
