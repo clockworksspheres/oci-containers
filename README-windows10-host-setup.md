@@ -27,6 +27,17 @@ https://chocolatey.org/packages/wsl2
 * Installing Docker the Chocolatey way (for Windows - must do the docker-desktop install):
 https://stefanscherer.github.io/how-to-install-docker-the-chocolatey-way/
 
+## Install a local docker registry
+
+```
+docker pull registry
+docker images
+docker run --name registry -p 5000:5000 -d registry
+docker container list
+docker ps
+```
+
+
 ## For any software installed by chocolaty, allow it through the windows anti-virus:
 
 ### Examples:
@@ -40,8 +51,6 @@ https://stefanscherer.github.io/how-to-install-docker-the-chocolatey-way/
   Add-MpPreference -ExclisionPath 'C:\Program Files\KeePassXC'  # where keepass is installed
   Add-MpPreference -ExclisionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
   ```
-
-#### 
 
 
 ## Potentially Useful References:
