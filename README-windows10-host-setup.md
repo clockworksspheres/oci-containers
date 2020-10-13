@@ -49,6 +49,8 @@ docker ps
   Add-MpPreference -ExclisionPath 'C:\Program Files\Git' -Verbose # where git is installed
   Add-MpPreference -ExclisionPath 'C:\Program Files\Docker'   # where Docker is installed
   Add-MpPreference -ExclisionPath 'C:\Program Files\KeePassXC'  # where keepass is installed
+  Add-MpPreference -ExclisionPath 'C:\Program Files\7-Zip'  # where keepass is installed
+  Add-MpPreference -ExclisionPath 'C:\Program Files\CherryTree'  # where keepass is installed
   Add-MpPreference -ExclisionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
   ```
 
