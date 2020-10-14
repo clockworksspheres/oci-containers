@@ -1,2 +1,0 @@
-* Menus and other sub-windows not rendering correctly on lubuntu when dev system set up per lubuntu README.
-

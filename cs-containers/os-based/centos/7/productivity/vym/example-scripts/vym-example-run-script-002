@@ -1,5 +1,0 @@
-#!/usr/bin/bash
-
-docker run -it -e XDG_RUNTIME_DIR=/tmp  -e QT_X11_NO_MITSHM=1 -v /tmp/.X11-unix:/tmp/.X11-unix -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECTHOME}:/opt/projects:rw -e DISPLAY=${DISPLAY}  localhost:5000/fredgears:vym-xvfb
-
-
