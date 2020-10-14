@@ -54,6 +54,15 @@ docker ps
   Add-MpPreference -ExclisionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
   ```
 
+## FAQ
+
+### Q. I'm having trouble with dbus and WSL-Ubuntu insode a mobyxterm window...
+
+### A. https://www.reddit.com/r/bashonubuntuonwindows/comments/9lpc0o/ubuntu_1804_dbus_fix_instructions_with/
+
+### Q.
+
+### A. 
 
 ## Potentially Useful References:
 
