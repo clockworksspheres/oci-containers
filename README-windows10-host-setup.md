@@ -37,7 +37,6 @@ docker container list
 docker ps
 ```
 
-
 ## For any software installed by chocolaty, allow it through the windows anti-virus:
 
 ### Examples:
@@ -60,9 +59,14 @@ docker ps
 
 ### A. https://www.reddit.com/r/bashonubuntuonwindows/comments/9lpc0o/ubuntu_1804_dbus_fix_instructions_with/
 
-### Q.
+### Q. Can I run docker inside an Ubuntu 20.04 WSL2 instance?
 
-### A. 
+### A. Yes, please see this link: 
+
+https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2
+
+If you are having trouble getting to the link, consider looking it up in the "wayback" machine: http://web.archive.org/
+
 
 ## Potentially Useful References:
 
