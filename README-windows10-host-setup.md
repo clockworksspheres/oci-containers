@@ -55,7 +55,7 @@ docker ps
 
 ## FAQ
 
-### Q. I'm having trouble with dbus and WSL-Ubuntu insode a mobyxterm window...
+### Q. I'm having trouble with dbus and WSL-Ubuntu inside a mobaxterm window...
 
 ### A. https://www.reddit.com/r/bashonubuntuonwindows/comments/9lpc0o/ubuntu_1804_dbus_fix_instructions_with/
 
@@ -79,22 +79,60 @@ If you are having trouble getting to the link, consider looking it up in the "wa
 * https://www.reddit.com/r/bashonubuntuonwindows/comments/ff7d75/cant_install_ubuntu_error_code_0x80073d05/
 * https://github.com/microsoft/WSL/issues/4940
 
-de-select Windows Subsystem for Linux in the apps -> more windows features window and reboot
+Turn off the "Windows Subsystem for Linux" feature in “Windows Settings” -> “Apps” -> “Apps & Features” -> “Optional Features” -> “More Windows Features”  “Windows Subsystem for Linux” checkbox.  Reboot.
 
+Run the following commands as an admin user once the system has been rebooted:
+
+```
 wsreset
 Get-AppxPackage -AllUsers -Name *Ubuntu*
 
 Remove-AppxPackage CannonicalGroupLimited.Ubuntu20.04onWindows_(get the rest of the string from the listing provided by the previous command)
-f
+
 wsreset
+```
 
-re-select Windows Subsystem for Linux in the More Windows Features window and reboot
+Turn on the "Windows Subsystem for Linux" feature in “Windows Settings” -> “Apps” -> “Apps & Features” -> “Optional Features” -> “More Windows Features”  “Windows Subsystem for Linux” checkbox.  Reboot.
 
 
+After the reboot, run the following commands in an admin powershell window:
+
+```
+wsreset
 DSIM /Online /Cleanup-Image /RestoreHealth
+```
 
 -----
+
+### Q. How do I check if I'm on WSL 1 or WSL 2?
+
+#### A. Check if you are using WSL 1 instead of WSL 2...  
+
+Please run the following in a powershell window:
+
+```
+PS C:\Users\RKevi> wsl -l -v
+  NAME                   STATE           VERSION
+* Ubuntu                 Stopped         1
+  docker-desktop-data    Running         2
+```
+
+If you see something like the above - with your linux in the VERSION column saying it's version 1, please make sure there is no linux instance running (close them all out if they are) and run the following:
+
+wsl.exe --set-version Ubuntu 2
+
+This should fix the problem.
+
+-----
+
+
+## Make sure these settings are set in Windows before you start
+
+Turn on windows features in “Windows Settings” -> “Apps” -> “Apps & Features” -> “Optional Features” -> “More Windows Features” and make sure both “Containers”, "Hyper-V", “Windows Hypervisor Platform” and “Windows Subsystem for Linux” checkboxes are selected.  This will likely required you to reboot the system for the features to become available.
+
 ## Potentially Useful References:
+
+Take note of the date of publish on the documents, as well as take what they say with a large grain of salt.. these links helped in solving past problems, not getting the current environment working.
 
 https://github.com/microsoft/WSL/issues/4120
 https://answers.microsoft.com/en-us/windows/forum/all/resolving-wslregisterdistribution-error-0x80370102/412cf42b-1424-444c-bb95-4aa2b5fe5eaf
@@ -102,28 +140,5 @@ https://github.com/microsoft/WSL/issues/4084
 https://www.reddit.com/r/bashonubuntuonwindows/comments/bg2kgo/issues_trying_to_run_ubuntu/
 https://gitmemory.com/issue/microsoft/WSL/4084/499579174
 https://github.com/microsoft/WSL/issues/4709
-
-wsl.exe --set-version Ubuntu 2
-
-This should fix the problem.
-
-
-Must come after WSL 2 setup
-
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
-
-
-# Setting up Windows 10 with WSL 2 and Docker for local IaC purposes
-
-## Please update Windows 10 to update version 2004 FIRST!
-
-https://www.bleepingcomputer.com/news/microsoft/windows-10-2004-update-not-offered-heres-how-to-get-it-now/
-
-## Need WSL 2
-
-https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-wsl-2-breaking-bug-in-new-windows-10-update/
-
-## Make sure these settings are set in Windows before you start
-
-Turn on windows features in “Windows Settings” -> “Apps” -> “Apps & Features” -> “Optional Features” -> “More Windows Features” and make sure both “Containers”, "Hyper-V", “Windows Hypervisor Platform” and “Windows Subsystem for Linux” checkboxes are selected.  This will likely required you to reboot the system for the features to become available.
+https://www.assistanz.com/steps-to-configure-private-registry-for-docker-windows-server-2016/
 
