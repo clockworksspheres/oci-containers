@@ -1,0 +1,26 @@
+#!/bin/bash
+
+#####
+# Docker env setup
+# REGISTRY_STORAGE_FILESYSTEM_ROOTDIRECTORY="/opt/projects/docks"
+
+sudo dbus-uuidgen --ensure=/etc/machine-id
+
+export XSOCK=/tmp/.X11-unix
+export XAUTH=/tmp/.docker.xauth
+touch $XAUTH
+
+xauth nlist :0 | sed -e 's/^..../ffff/' | xauth -f $XAUTH nmerge -
+
+##############
+
+#####
+# clockworksspheres env variables
+
+PROJECTHOME=${HOME}/Documents/res/projects
+
+#####
+
+docker run -ti -v $XSOCK:$XSOCK:rw -v $XAUTH:$XAUTH:rw -e XAUTHORITY=${XAUTH} -e XDG_RUNTIME_DIR=/tmp -e QT_X11_NO_MITSHM=1 -v /etc/machine-id:/etc/machine-id:ro -v ${PROJECTHOME}:/opt/projects:rw -e DISPLAY=docker.for.mac.host.internal:0 localhost:5000/fredgears:vym-xvfb
+
+
