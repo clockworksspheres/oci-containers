@@ -1,4 +1,4 @@
-# Setting up Windows 10 with WSL 2 and Docker for local IaC purposes
+# Setting up Windows 10 with WSL 2 and Docker for local development of IaC processes
 
 ## Please update Windows 10 to update version 2004 FIRST!
 
