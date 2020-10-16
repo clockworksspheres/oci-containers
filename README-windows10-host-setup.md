@@ -59,6 +59,8 @@ docker ps
 
 ### A. https://www.reddit.com/r/bashonubuntuonwindows/comments/9lpc0o/ubuntu_1804_dbus_fix_instructions_with/
 
+-----
+
 ### Q. Can I run docker inside an Ubuntu 20.04 WSL2 instance?
 
 ### A. Yes, please see this link: 
@@ -67,7 +69,31 @@ https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2
 
 If you are having trouble getting to the link, consider looking it up in the "wayback" machine: http://web.archive.org/
 
+-----
 
+### Q. I borked my ubuntu install - I tried removing it and reinstalling it, but keep getting error Code: 0x80073D05... how to I get ubuntu reinstalled?
+
+### A. Here are some links to check out:
+
+* https://minitool.com/news/fix-windows-store-0x80073d05
+* https://www.reddit.com/r/bashonubuntuonwindows/comments/ff7d75/cant_install_ubuntu_error_code_0x80073d05/
+* https://github.com/microsoft/WSL/issues/4940
+
+de-select Windows Subsystem for Linux in the apps -> more windows features window and reboot
+
+wsreset
+Get-AppxPackage -AllUsers -Name *Ubuntu*
+
+Remove-AppxPackage CannonicalGroupLimited.Ubuntu20.04onWindows_(get the rest of the string from the listing provided by the previous command)
+f
+wsreset
+
+re-select Windows Subsystem for Linux in the More Windows Features window and reboot
+
+
+DSIM /Online /Cleanup-Image /RestoreHealth
+
+-----
 ## Potentially Useful References:
 
 https://github.com/microsoft/WSL/issues/4120
@@ -76,20 +102,6 @@ https://github.com/microsoft/WSL/issues/4084
 https://www.reddit.com/r/bashonubuntuonwindows/comments/bg2kgo/issues_trying_to_run_ubuntu/
 https://gitmemory.com/issue/microsoft/WSL/4084/499579174
 https://github.com/microsoft/WSL/issues/4709
-https://www.assistanz.com/steps-to-configure-private-registry-for-docker-windows-server-2016/
-
-# Older notes that may still be useful
-
-Check if you are using WSL 1 instead of WSL 2...  Please run the following in a powershell window:
-
-```
-PS C:\Users\RKevi> wsl -l -v
-  NAME                   STATE           VERSION
-* Ubuntu                 Stopped         1
-  docker-desktop-data    Running         2
-```
-
-If you see something like the above - with your linux in the VERSION column saying it's version 1, please make sure there is no linux instance running (close them all out if they are) and run the following:
 
 wsl.exe --set-version Ubuntu 2
 
@@ -100,4 +112,18 @@ Must come after WSL 2 setup
 
 https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-20-04
 
+
+# Setting up Windows 10 with WSL 2 and Docker for local IaC purposes
+
+## Please update Windows 10 to update version 2004 FIRST!
+
+https://www.bleepingcomputer.com/news/microsoft/windows-10-2004-update-not-offered-heres-how-to-get-it-now/
+
+## Need WSL 2
+
+https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-wsl-2-breaking-bug-in-new-windows-10-update/
+
+## Make sure these settings are set in Windows before you start
+
+Turn on windows features in “Windows Settings” -> “Apps” -> “Apps & Features” -> “Optional Features” -> “More Windows Features” and make sure both “Containers”, "Hyper-V", “Windows Hypervisor Platform” and “Windows Subsystem for Linux” checkboxes are selected.  This will likely required you to reboot the system for the features to become available.
 
