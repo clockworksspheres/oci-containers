@@ -106,7 +106,7 @@ DSIM /Online /Cleanup-Image /RestoreHealth
 
 ### Q. How do I check if I'm on WSL 1 or WSL 2?
 
-#### A. Check if you are using WSL 1 instead of WSL 2...  
+### A. Check if you are using WSL 1 instead of WSL 2...  
 
 Please run the following in a powershell window:
 
@@ -125,6 +125,22 @@ This should fix the problem.
 
 -----
 
+### Q. I need to access my WSL installed ubuntu home directory to fix some things.  How do I do that? 
+
+### A. Note, unless the user shell is really messed up, please only access the linux files from linux.
+
+How to access the WSL installed linux home directory, and why it's a bad idea (https://github.com/microsoft/WSL/issues/4328)
+
+That's the long version - the short version - 
+
+```
+ 1. Run the distribution
+ 2. Press Win+R 
+ 3. Type \\wsl$ which opens File Explorer
+ 4. Double click on the distribution folder.
+```
+
+---
 
 ## Make sure these settings are set in Windows before you start
 
