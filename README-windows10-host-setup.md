@@ -14,7 +14,7 @@ Turn on windows features in “Windows Settings” -> “Apps” -> “Apps & Fe
 
 ## Install Chocolatey
 
-
+https://chocolatey.org/install
 
 
 ## Install WSL 2 via Chocolatey

@@ -1,6 +1,16 @@
 #oci-containers
-collection of other very useful container repos, as well as customized tool containers
 
+Collection of other very useful container repos, as well as customized tool containers
+
+Also houses IaC container templates for the IoTHarborAnywhere project.
+
+## Setting up docker dev environments
+
+This section covers replicating the developer's environment for creating the containers in the cs-containers directory
+
+ * [Ubuntu 20.04](https://github.com/clockworksspheres/oci-containers/README-lubuntu-host-setup-20.04.md)
+ * [macOS Catalina](https://github.com/clockworksspheres/oci-containers/blob/dev/README-macos-host-setup-catalina.md)
+ * [Windows 10 (update 2004, with WSL2)](https://github.com/clockworksspheres/oci-containers/blob/dev/README-macos-host-setup-catalina.md)
 
 ## Container best practices
 
