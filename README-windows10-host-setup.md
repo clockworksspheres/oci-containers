@@ -53,6 +53,56 @@ docker ps
   Add-MpPreference -ExclisionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
   ```
 
+## Chocolatey installed apps to support the docker desktop install
+
+## Chocolatey installed apps to support general dev work
+
+## Docker Desktop configuration to allow WSL2 OS's access to the docker service
+
+## WSL2 OS (Ubuntu 20.04)  setup to test and use docker setup
+
+### Ubuntu packages to install
+
+```
+sudo apt install dbus-x11 xvfb x11-apps
+```
+
+### Commands go run to set up the linux environment to interface with the docker desktop windows app
+
+```
+sudo systemd-machine-id-setup  # one time setup command
+dbus-uuidgen --ensure=/etc/machine-id
+```
+
+### Managing the linux services to interface with the docker desktop windows app
+
+```
+sudo service dbus status # yes, this is appropriate for Ubuntu 20.04....
+sudo service dbus start # yes, this is appropriate for Ubuntu 20.04....
+sudo service dbus enable # yes, this is appropriate for Ubuntu 20.04....
+sudo service dbus status # yes, this is appropriate for Ubuntu 20.04....
+```
+```
+# Not sure about this command, I think it is for a specific 
+#
+# sudo dbus-launch --autolaunch $(cat /etc/machine-id) --binary-syntax --close-stderr
+#
+```
+
+### Add the following to the ~/.bash_profile setup file (on the linux WSL2 installed OS)
+
+```
+#####
+# Manage DISPLAY - for docker
+# Make sure the DISPLAY is set up correctly for interface with docker desktop...
+export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+# Docker related required environment variable
+export LIBGL_ALWAYS_INDIRECT=1
+#
+#####
+```
+
+
 ## FAQ
 
 ### Q. I'm having trouble with dbus and WSL-Ubuntu inside a mobaxterm window...
