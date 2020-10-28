@@ -4,17 +4,24 @@
 
 https://www.bleepingcomputer.com/news/microsoft/windows-10-2004-update-not-offered-heres-how-to-get-it-now/
 
-## Need WSL 2
-
-https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-wsl-2-breaking-bug-in-new-windows-10-update/
 
 ## Make sure these settings are set in Windows before you start
 
 Turn on windows features in “Windows Settings” -> “Apps” -> “Apps & Features” -> “Optional Features” -> “More Windows Features” and make sure both “Containers”, "Hyper-V", “Windows Hypervisor Platform” and “Windows Subsystem for Linux” checkboxes are selected.  This will likely required you to reboot the system for the features to become available.
 
+
 ## Install Chocolatey
 
 https://chocolatey.org/install
+
+Note: may be useful: https://www.bleepingcomputer.com/news/microsoft/microsoft-fixes-wsl-2-breaking-bug-in-new-windows-10-update/
+
+
+## Install Terminal from the Windows App Store
+
+```
+choco install microsoft-windows-terminal
+```
 
 
 ## Install WSL 2 via Chocolatey
@@ -22,10 +29,12 @@ https://chocolatey.org/install
 * Installing WSL2 the Chocolatey way (for Windows):
 https://chocolatey.org/packages/wsl2
 
+
 ## Install the docker-desktop Chocolatey package
 
 * Installing Docker the Chocolatey way (for Windows - must do the docker-desktop install):
 https://stefanscherer.github.io/how-to-install-docker-the-chocolatey-way/
+
 
 ## Install a local docker registry
 
@@ -37,7 +46,7 @@ docker container list
 docker ps
 ```
 
-## For any software installed by chocolaty, allow it through the windows anti-virus:
+## For any software installed by chocolaty, allow it through the windows anti-virus using commands in a Administrator level Powershell:
 
 ### Examples:
 
@@ -191,10 +200,6 @@ That's the long version - the short version -
 ```
 
 ---
-
-## Make sure these settings are set in Windows before you start
-
-Turn on windows features in “Windows Settings” -> “Apps” -> “Apps & Features” -> “Optional Features” -> “More Windows Features” and make sure both “Containers”, "Hyper-V", “Windows Hypervisor Platform” and “Windows Subsystem for Linux” checkboxes are selected.  This will likely required you to reboot the system for the features to become available.
 
 ## Potentially Useful References:
 
