@@ -23,6 +23,20 @@ Note: may be useful: https://www.bleepingcomputer.com/news/microsoft/microsoft-f
 choco install microsoft-windows-terminal
 ```
 
+## Install and configure vcxsrv via chocolaty
+
+### Installing vcxsrv
+
+In an administrator powershell window run:
+
+```
+choco install vcxsrv
+```
+
+### Configuring vcxsrv
+
+https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
+
 
 ## Install WSL 2 via Chocolatey
 
@@ -36,6 +50,19 @@ https://chocolatey.org/packages/wsl2
 https://stefanscherer.github.io/how-to-install-docker-the-chocolatey-way/
 
 
+## Install your choice of Linux from the Windows App Store - this document will reference Ubuntu 20.04
+
+
+## Configure Docker to allow WSL2 OS's access to the docker service
+
+1. Open Docker Desktop
+2. Click on the gear (Settings) button in the title bar of the window
+3. Select the "Resources" section on the left
+4. Select the "WSL Integration" under the "resources" section
+5. Make sure the checkbox is selected to "Enable Integration with my default WSL distro" 
+6. Flip the switch to enable the version of Linux that you just installed (Ubuntu 20.04)
+
+
 ## Install a local docker registry
 
 ```
@@ -46,11 +73,29 @@ docker container list
 docker ps
 ```
 
+
+## Chocolatey installed apps to support the docker desktop install
+
+## Chocolatey installed apps to support general dev work
+
+```
+choco install grep
+choco install geany
+choco install pycharm-ce
+choco install packer
+choco install vagrant
+choco install git
+choco install KeePassXC
+choco install 7-zip
+choco install CherryTree
+```
+
+
 ## For any software installed by chocolaty, allow it through the windows anti-virus using commands in a Administrator level Powershell:
 
 ### Examples:
 
-  ```
+```
   Add-MpPreference -ExclusionPath C:\HashiCorp -Verbose   # where Vagrant is installed
   Add-MpPreference -ExclusionPath %ProgramData%\chocolatey   # where a bunch of chocolatey stuff is installed
   Add-MpPreference -ExclusionPath C:\tools\vim' -Verbose   # where vim is installed
@@ -60,21 +105,23 @@ docker ps
   Add-MpPreference -ExclisionPath 'C:\Program Files\7-Zip'  # where keepass is installed
   Add-MpPreference -ExclisionPath 'C:\Program Files\CherryTree'  # where keepass is installed
   Add-MpPreference -ExclisionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
-  ```
+```
 
-## Chocolatey installed apps to support the docker desktop install
-
-## Chocolatey installed apps to support general dev work
-
-## Docker Desktop configuration to allow WSL2 OS's access to the docker service
-
-## WSL2 OS (Ubuntu 20.04)  setup to test and use docker setup
+## Docker Desktop configuration 
 
 ### Ubuntu packages to install
 
 ```
-sudo apt install dbus-x11 xvfb x11-apps
+sudo apt install dbus-x11 xvfb x11-apps git geany pycharm-ce vagrant packer snap
 ```
+
+### Snap packages to install
+
+```
+snap install pycharm-ce
+
+```
+
 
 ### Commands go run to set up the linux environment to interface with the docker desktop windows app
 
