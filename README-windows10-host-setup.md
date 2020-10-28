@@ -111,6 +111,76 @@ export LIBGL_ALWAYS_INDIRECT=1
 #####
 ```
 
+#### optional method of maintaining bash histories - putting in the ~/.profile user section:
+
+```
+#####
+# Managing bash history
+[[ ! -d ~/.bash_histories ]] && mkdir --mode=0700 ~/.bash_histories
+[[ -d ~/.bash_histories ]] && chmod 0700 ~/.bash_histories
+
+# Convert /dev/nnn/X or /dev/nnnX to "nnnX"
+HISTSUFFIX=`tty | sed 's/\///g;s/^dev//g'`
+DATESTRING=`date +"%C%y-%m-%d"`
+
+sync;
+sync;
+sync;
+
+HISTORY_FILE="bash_history_${DATESTRING}_$HISTSUFFIX"
+
+# if the $HISTFILE doesn't exist, touch it...
+[[ ! -e ~/.bash_histories/$HISTORY_FILE ]] || touch ~/.bash_histories/$HISTORY_FILE
+
+# History file is now .bash_history_pts0
+HISTFILE="$HOME/.bash_histories/$HISTORY_FILE"
+HISTTIMEFORMAT="%C%y-%m-%d_%H-%M-%S ]--> "
+HISTCONTROL=ignoredups
+shopt -s histappend
+
+# then set HISTFILESIZE to a large value
+HISTFILESIZE=40000
+HISTSIZE=80000
+
+PROMPT_COMMAND="history -a; history -r; $PROMPT_COMMAND"
+
+#####
+```
+
+### Testing the docker installation with xeyes
+
+In your linux shell, make sure to source the ~/.profile that you added the above content to:
+
+```
+. ~/.profile
+```
+
+In a scratch source directory create an xeyesDockerfile directory and add the following content into a "Dockerfile" in that directory:
+
+```
+FROM debian:latest
+ 
+RUN apt-get update && apt-get install -y x11-apps
+RUN rm -rf /tmp/* /usr/share/doc/* /usr/share/info/* /var/tmp/*
+RUN useradd -ms /bin/bash user
+ENV DISPLAY :0
+ 
+USER user
+ENTRYPOINT ["/bin/sh", "-c", "$0 \"$@\"", "xeyes"]
+```
+
+Then in the xeyesDockerfile directory, run the command:
+
+(for when running the command inside the xeyesDockerfile directory)
+```
+docker build . -t xeyes
+```
+
+(for when running the command in the parent directory of the xeyesDockerfile directory)
+```
+docker build xeyesDockerfile -t xeyes
+```
+
 
 ## FAQ
 
@@ -200,6 +270,17 @@ That's the long version - the short version -
 ```
 
 ---
+
+### Q. I can't remember where in my home directory I put a dockerfile, specific to a particular container.  I ran the docker build command on that Dockerfile, or directory that contained the dockerfile.  I am using the optional bash history setup described above.
+
+### A. Here is a find command one can use to search through all the history files, find the right history file to look in, with a line number in that file, in case you need to look at some of the commands prior to running the docker build command, or after running it.
+
+~~~
+find ${HOME} -iname "*bash_hist*" -print -exec grep -n "build" {} \;
+```
+
+-----
+
 
 ## Potentially Useful References:
 
