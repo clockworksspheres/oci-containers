@@ -10,7 +10,7 @@ This section covers replicating the developer's environment for creating the con
 
  * [Ubuntu 20.04](https://github.com/clockworksspheres/oci-containers/blob/dev/README-lubuntu-host-setup-20.04.md)
  * [macOS Catalina](https://github.com/clockworksspheres/oci-containers/blob/dev/README-macos-host-setup-catalina.md)
- * [Windows 10 (update 2004, with WSL2)](https://github.com/clockworksspheres/oci-containers/blob/dev/README-windows10-host-setup.md)
+ * [Windows 10 (update 2004, with Ubuntu 20.04 installed on WSL2)](https://github.com/clockworksspheres/oci-containers/blob/dev/README-windows10-host-setup.md)
 
 ## Container best practices
 
