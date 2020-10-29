@@ -333,11 +333,22 @@ find ${HOME} -iname "*bash_hist*" -print -exec grep -n "build" {} \;
 
 Take note of the date of publish on the documents, as well as take what they say with a large grain of salt.. these links helped in solving past problems, not getting the current environment working.
 
+https://stackoverflow.com/questions/61110603/how-to-set-up-working-x11-forwarding-on-wsl2
+https://github.com/microsoft/WSL/issues/4106
 https://github.com/microsoft/WSL/issues/4120
+https://blog.nimamoh.net/wsl2-and-vcxsrv/
+https://techcommunity.microsoft.com/t5/windows-dev-appconsult/running-wsl-gui-apps-on-windows-10/ba-p/1493242
 https://answers.microsoft.com/en-us/windows/forum/all/resolving-wslregisterdistribution-error-0x80370102/412cf42b-1424-444c-bb95-4aa2b5fe5eaf
 https://github.com/microsoft/WSL/issues/4084
 https://www.reddit.com/r/bashonubuntuonwindows/comments/bg2kgo/issues_trying_to_run_ubuntu/
 https://gitmemory.com/issue/microsoft/WSL/4084/499579174
 https://github.com/microsoft/WSL/issues/4709
 https://www.assistanz.com/steps-to-configure-private-registry-for-docker-windows-server-2016/
+https://www.techielass.com/install-windows-terminal-with-chocolatey
+https://github.com/microsoft/windows-dev-box-setup-scripts/issues/30
+https://techutils.in/blog/tag/windows-subsystem-for-linux/
 
+## Interesting further reading:
+
+https://livebook.manning.com/book/docker-in-practice/chapter-6/200
+https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2
