@@ -112,7 +112,8 @@ choco install CherryTree
 ### Ubuntu packages to install
 
 ```
-sudo apt install dbus-x11 xvfb x11-apps git geany pycharm-ce vagrant packer snap htop atop nettop netstat net-tools wireshark tcpdump geany meld xvfb vim acl vym
+sudo apt-get clean; apt-get autoremove; sudo apt-get update && sudo apt-get upgrade
+sudo apt-get install dbus-x11 xvfb x11-apps git geany pycharm-ce vagrant packer snap htop atop nettop netstat net-tools wireshark tcpdump geany meld xvfb vim acl vym packer vagrant
 ```
 
 ### Optional: Configuring the WSL2 installed Ubuntu 20.04 to be able to use snap
