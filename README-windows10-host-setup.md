@@ -142,6 +142,7 @@ snap install cherrytree
 ### Commands go run to set up the linux environment to interface with the docker desktop windows app
 
 ```
+sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 sudo systemd-machine-id-setup  # one time setup command
 dbus-uuidgen --ensure=/etc/machine-id
 ```
@@ -170,6 +171,9 @@ sudo service dbus status # yes, this is appropriate for Ubuntu 20.04....
 export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 # Docker related required environment variable
 export LIBGL_ALWAYS_INDIRECT=1
+#
+# Adding support for the snap package manager
+PATH=$PATH:/bin/snap
 #
 #####
 ```
