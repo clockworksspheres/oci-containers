@@ -74,7 +74,7 @@ docker ps
 ```
 
 
-## Chocolatey installed apps that 
+## Chocolatey installed apps
 
 ## Chocolatey installed apps to support general dev work
 
