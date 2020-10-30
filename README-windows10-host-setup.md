@@ -74,7 +74,7 @@ docker ps
 ```
 
 
-## Chocolatey installed apps to support the docker desktop install
+## Chocolatey installed apps that 
 
 ## Chocolatey installed apps to support general dev work
 
@@ -112,14 +112,30 @@ choco install CherryTree
 ### Ubuntu packages to install
 
 ```
-sudo apt install dbus-x11 xvfb x11-apps git geany pycharm-ce vagrant packer snap
+sudo apt install dbus-x11 xvfb x11-apps git geany pycharm-ce vagrant packer snap htop atop nettop netstat net-tools wireshark tcpdump geany meld xvfb vim acl vym
 ```
 
-### Snap packages to install
+### Optional: Configuring the WSL2 installed Ubuntu 20.04 to be able to use snap
 
 ```
-snap install pycharm-ce
+git clone https://github.com/DamionGans/ubuntu-wsl2-systemd-script.git
+cd ubuntu-wsl2-systemd-script/
+bash ubuntu-wsl2-systemd-script.sh
+# Enter your password and wait until the script has finished
+```
 
+Restart your ubuntu shell, and you should now be able to use snap to install software.
+
+Reference: https://github.com/damionGans/ubuntu-wsl2-systemd-script
+
+
+### Possible snap packages to install
+
+```
+snap install --classic pycharm-community
+snap install --classic vscode
+snap install --classic intellij-idea-community
+snap install cherrytree
 ```
 
 
