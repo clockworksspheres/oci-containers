@@ -113,7 +113,7 @@ choco install CherryTree
 
 ```
 sudo apt-get clean; apt-get autoremove; sudo apt-get update && sudo apt-get upgrade
-sudo apt-get install dbus-x11 xvfb x11-apps git geany pycharm-ce vagrant packer snap htop atop nettop netstat net-tools wireshark tcpdump geany meld xvfb vim acl vym packer vagrant
+sudo apt-get install dbus-x11 xvfb x11-apps git geany vagrant packer snap htop atop net-tools wireshark tcpdump geany meld xvfb vim acl vym packer vagrant
 ```
 
 ### Optional: Configuring the WSL2 installed Ubuntu 20.04 to be able to use snap
@@ -369,7 +369,8 @@ https://www.techielass.com/install-windows-terminal-with-chocolatey
 https://github.com/microsoft/windows-dev-box-setup-scripts/issues/30
 https://techutils.in/blog/tag/windows-subsystem-for-linux/
 
-## Interesting further reading:
+## Interesting further reading/study:
 
+https://www.youtube.com/watch?v=idW-an99TAM
 https://livebook.manning.com/book/docker-in-practice/chapter-6/200
 https://code.visualstudio.com/blogs/2020/03/02/docker-in-wsl2

@@ -31,7 +31,7 @@
         }
     ] ],
     "Variables": {
-        "vm_name": "hamster",
+        "vm_name": "hamster-xfce",
 	"registry_host": "localhost",
 	"registry_port": "5000",
 	"docker_registry_user": "fredgears"
