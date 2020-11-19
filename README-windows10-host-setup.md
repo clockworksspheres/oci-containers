@@ -88,7 +88,10 @@ choco install git
 choco install KeePassXC
 choco install 7-zip
 choco install CherryTree
+choco install linux-reader
 ```
+
+https://chocolatey.org/packages/linux-reader
 
 
 ## For any software installed by chocolaty, allow it through the windows anti-virus using commands in a Administrator level Powershell:
