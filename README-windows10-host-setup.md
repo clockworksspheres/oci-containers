@@ -55,12 +55,42 @@ https://stefanscherer.github.io/how-to-install-docker-the-chocolatey-way/
 
 ## Configure Docker to allow WSL2 OS's access to the docker service
 
+(Docker Desktop v3 setup)
+
 1. Open Docker Desktop
-2. Click on the gear (Settings) button in the title bar of the window
-3. Select the "Resources" section on the left
-4. Select the "WSL Integration" under the "resources" section
-5. Make sure the checkbox is selected to "Enable Integration with my default WSL distro" 
-6. Flip the switch to enable the version of Linux that you just installed (Ubuntu 20.04)
+
+2. Select the gear (Settings) button in the title bar of the window
+
+3. On the General tab:
+    a. Make sure that the "Start Docker Desktop when you log in" and "Use the WSL 2 based engine" are turned on
+    b. The other options are turned off.
+
+4. Select the "Resources" section on the left
+    a. Select the PROXIES subtab, and set your proxies if needed
+    b. Select the NETWORK subtab, note the docker subnet if you have containers that need to have their network hard-coded.
+    c. Select the WSL INTEGRATION subtab, select the "Enable integration with my default WSL distro, and take note that when new installs of WSL2 based OS's are done, to come back to this sub-tab - they will need to manually be enabled via the switch on this panel.
+
+5. Select the Docker Engine tab on the left:
+    a. The reported version for Docker Engine shour be at least v20.10.0
+    b. Make sure the following JSON is in the window:
+
+```
+{
+  "registry-mirrors": [],
+  "insecure-registries": [],
+  "debug": false,
+  "experimental": false,
+  "features": {
+    "buildkit": true
+  }
+}
+```
+
+6. Select the Experimental Features tab on the left
+    a. Make sure the "Enable CLI experimental features" is turned off
+    b. Make sure the "Enable cloud experience"  is turned on.
+
+7. Select the Kubernetes tab on the left, select the features that are needed for your project, at this time, they are all set to disabled
 
 
 ## Install a local docker registry
