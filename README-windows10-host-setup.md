@@ -112,11 +112,12 @@ docker ps
 choco install grep
 choco install geany
 choco install pycharm-ce
+# Alternative choco install pycharm
 choco install packer
 choco install vagrant
 choco install git
 choco install KeePassXC
-choco install 7-zip
+choco install 7zip
 choco install CherryTree
 choco install linux-reader
 ```
@@ -132,15 +133,22 @@ https://chocolatey.org/packages/linux-reader
   Add-MpPreference -ExclusionPath C:\HashiCorp -Verbose   # where Vagrant is installed
   Add-MpPreference -ExclusionPath %ProgramData%\chocolatey   # where a bunch of chocolatey stuff is installed
   Add-MpPreference -ExclusionPath C:\tools\vim' -Verbose   # where vim is installed
-  Add-MpPreference -ExclisionPath 'C:\Program Files\Git' -Verbose # where git is installed
-  Add-MpPreference -ExclisionPath 'C:\Program Files\Docker'   # where Docker is installed
-  Add-MpPreference -ExclisionPath 'C:\Program Files\KeePassXC'  # where keepass is installed
-  Add-MpPreference -ExclisionPath 'C:\Program Files\7-Zip'  # where keepass is installed
-  Add-MpPreference -ExclisionPath 'C:\Program Files\CherryTree'  # where keepass is installed
-  Add-MpPreference -ExclisionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
+  Add-MpPreference -ExclusionPath 'C:\Program Files\Git' -Verbose # where git is installed
+  Add-MpPreference -ExclusionPath 'C:\Program Files\Docker'   # where Docker is installed
+  Add-MpPreference -ExclusionPath 'C:\Program Files\KeePassXC'  # where keepass is installed
+  Add-MpPreference -ExclusionPath 'C:\Program Files\7-Zip'  # where keepass is installed
+  Add-MpPreference -ExclusionPath 'C:\Program Files\CherryTree'  # where keepass is installed
+  Add-MpPreference -ExclusionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
 ```
 
 ## Docker Desktop configuration 
+
+### Download ubuntu terminal image
+
+Open the Windows Store and search for Linux or Ubuntu. 
+In this example we used Ubuntu 20.04 LTS. 
+Select "Get" to download. Once download is complete, select "Launch". 
+You now have a ubuntu terminal image running!
 
 ### Ubuntu packages to install
 
