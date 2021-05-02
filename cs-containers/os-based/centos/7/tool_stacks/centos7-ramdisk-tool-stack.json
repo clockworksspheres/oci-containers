@@ -1,0 +1,39 @@
+{
+    "builders": [{
+        "type": "docker",
+        "image": "localhost:5000/fredgears:centos-base",
+        "commit": "true"
+    }],
+    "provisioners": [
+        {
+        "environment_vars": [
+                "PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/bin:/usr/local/sbin",
+                "PROJECT_DIR={{ user `project_dir` }}"
+        ],
+        "type": "shell",
+        "inline": [
+             "/bin/yum install -y python27 pylint && yum clean all", 
+             "/bin/yum install -y meld, git, less, vim, bash-completion && /bin/yum clean all",
+             "/bin/yum install -y geany geany-plugins-common geany-plugins-addons geany-plugins-debugger geany-plugins-vc geany-plugins-vimode geany-plugins-codenav geany-plugins-git-changebar geany-plugins-markdown geany-plugins-scope geany-plugins-overview geany-plugins-automark geany-plugins-spellcheck geany-plugins-treebrowser geany-plugins-shiftcolumn geany-plugins-workbench geany-themes geany-plugins-geanydoc && /bin/yum clean all"
+        ]
+        }
+    ],
+    "post-processors": [ [
+        {
+            "type": "docker-tag",
+            "repository": "localhost:5000/fredgears",
+            "tag": "{{ user `vm_name` }}"
+        },
+        "docker-push",
+        {
+            "type": "docker-save",
+            "path": "{{ user `vm_name` }}.tar"
+        }
+    ] ],
+    "Variables": {
+        "vm_name": "centos7-ramdisk-tool-stack",
+        "project_dir": "ramdisk"
+
+        }
+}
+
