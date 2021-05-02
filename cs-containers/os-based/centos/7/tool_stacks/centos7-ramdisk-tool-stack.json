@@ -3,7 +3,7 @@
         "type": "docker",
         "image": "localhost:5000/fredgears:centos-base",
         "commit": "true",
-        "changes": [ "CMD [\"/bash\"]" ]
+        "changes": [ "CMD [ '/bin/bash -l -c' ] " ]
     }],
     "provisioners": [
         {
@@ -15,7 +15,8 @@
         "inline": [
              "/bin/yum install -y python27 pylint && yum clean all", 
              "/bin/yum install -y meld, git, less, vim, bash-completion && /bin/yum clean all",
-             "/bin/yum install -y geany geany-plugins-common geany-plugins-addons geany-plugins-debugger geany-plugins-vc geany-plugins-vimode geany-plugins-codenav geany-plugins-git-changebar geany-plugins-markdown geany-plugins-scope geany-plugins-overview geany-plugins-automark geany-plugins-spellcheck geany-plugins-treebrowser geany-plugins-shiftcolumn geany-plugins-workbench geany-themes geany-plugins-geanydoc && /bin/yum clean all"
+             "/bin/yum install -y geany geany-plugins-common geany-plugins-addons geany-plugins-debugger geany-plugins-vc geany-plugins-vimode geany-plugins-codenav geany-plugins-git-changebar geany-plugins-markdown geany-plugins-scope geany-plugins-overview geany-plugins-automark geany-plugins-spellcheck geany-plugins-treebrowser geany-plugins-shiftcolumn geany-plugins-workbench geany-themes geany-plugins-geanydoc && /bin/yum clean all",
+             "which bash"
         ]
         }
     ],
