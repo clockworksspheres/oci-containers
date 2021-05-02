@@ -2,7 +2,8 @@
     "builders": [{
         "type": "docker",
         "image": "localhost:5000/fredgears:centos-base",
-        "commit": "true"
+        "commit": "true",
+        "changes": [ "CMD [\"/bash\"]" ]
     }],
     "provisioners": [
         {
