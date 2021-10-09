@@ -1,2 +1,5 @@
 *tar
 /.project
+.DS_Store
+.idea
+
