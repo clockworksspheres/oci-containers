@@ -109,6 +109,7 @@ docker ps
 ## Chocolatey installed apps to support general dev work
 
 ```
+choco install pyenv-win
 choco install grep
 choco install geany
 choco install pycharm-ce
@@ -130,18 +131,56 @@ https://chocolatey.org/packages/linux-reader
 ### Examples:
 
 ```
-  Add-MpPreference -ExclusionPath C:\HashiCorp -Verbose   # where Vagrant is installed
+  Add-MpPreference -ExclusionPath 'C:\HashiCorp' -Verbose   # where Vagrant is installed
   Add-MpPreference -ExclusionPath %ProgramData%\chocolatey   # where a bunch of chocolatey stuff is installed
-  Add-MpPreference -ExclusionPath C:\tools\vim' -Verbose   # where vim is installed
+  Add-MpPreference -ExclusionPath 'C:\tools\vim' -Verbose   # where vim is installed
   Add-MpPreference -ExclusionPath 'C:\Program Files\Git' -Verbose # where git is installed
   Add-MpPreference -ExclusionPath 'C:\Program Files\Docker'   # where Docker is installed
   Add-MpPreference -ExclusionPath 'C:\Program Files\KeePassXC'  # where keepass is installed
   Add-MpPreference -ExclusionPath 'C:\Program Files\7-Zip'  # where keepass is installed
   Add-MpPreference -ExclusionPath 'C:\Program Files\CherryTree'  # where keepass is installed
-  Add-MpPreference -ExclusionPath 'C:\Program Files (x86)\Geany'   # where geany is installed
+  Add-MpPreference -ExclusionPath 'C:\Program Files\draw.io'
+  Add-MpPreference -ExclusionPath 'C:\Program Files\VcXsrv'
+  Add-MpPreference -ExclusionPath 'C:\Program Files\umbrello'
+  Add-MpPreference -ExclusionPath 'C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2021.3.2'
+  Add-MpPreference -ExclusionPath 'C:\Program Files (x86)\BraveSoftware'
+  Add-MpPreference -ExclusionPath 'C:\Program Files (x86)\BruteSharkDesktop'
+  Add-MpPreference -ExclusionPath 'C:\Program Files (x86)\Geany'
+  Add-MpPreference -ExclusionPath 'C:\Program Files (x86)\PyCharm Community Edition 2021.3.2'
+  Add-MpPreference -ExclusionPath 'C:\Program Files (x86)\Tomboy'
+  Add-MpPreference -ExclusionPath 'C:\Program Files (x86)\WinPcap'
+  Add-MpPreference -ExclusionPath 'C:\Users\%USER%\.pyenv'
 ```
 
-## Docker Desktop configuration 
+## pyenv configuration
+
+[pyenv](https://github.com/pyenv-win/pyenv-win) is for managing python versions
+
+### Configuration
+
+Check out the above pyenv-win github page - the configuration instructions there are the most current.
+
+NOTE: execution policy can get in the way of configuration and management of any script, for more about
+"ExecutionPolicy", please see [this Microsoft document](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.core/about/about_execution_policies?view=powershell-7.2).
+
+At the moment, before running scripts on Windows, I'm going to run:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Bypass -Scope CurrentUser
+```
+
+And when done running scripts, running:
+
+```
+Set-ExecutionPolicy -ExecutionPolicy Default -Scope CurrentUser
+```
+
+Will need to check out the registry, to see if the commands leave trash in registry each time they are run.
+
+Once the "Bypass" setting is set, pyenv should be usable as normal.
+
+
+## Ubuntu installation and configuration
 
 ### Download ubuntu terminal image
 
