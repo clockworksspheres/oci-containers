@@ -1,4 +1,4 @@
-# Setting up a macOS Ventura for using Docker containers, plus some other useful tools
+# Setting up a macOS Ventura to use CNCF OCI containers
 
 
 ## Setting up package management
@@ -16,21 +16,24 @@ xcode-select --install
 
 Instructions can be found at https://brew.sh/
 
-## Installing required software
+## Installing required system dependancies 
+to support x11 type software piping from container to host
 #xquartz #socat #docker #dbus
 
-Software needed to be able to use obsidian, drawio, vym, cherrytree,  etc...
-
-First, install useful "tap's":
+First, install useful homebrew "tap's":
 
 ```
 brew tap homebrew/brew-cask
 brew tap homebrew/cask-versions
 ```
 
-Before one can work with containers in this repo (includes getting X installed and working):
+System/infrastructure software dependancies requred to support using containers
+with tools such as obsidian, drawio, vym, cherrytree,  etc, installed that 
+requre an x11 pipe between container and host.
+
+Before one can work with containers in this repo (includes getting X11 installed and working):
 ```
-brew cask install xquartz
+brew install xquartz
 brew install socat
 brew install docker
 #####
@@ -39,7 +42,7 @@ brew install dbus
 ```
 
 ### Setting up dbus
-#settingupdbus
+#settingupdbus #dbus
 
 ```
 mkdir -p ~/Library/LaunchAgents
@@ -73,30 +76,34 @@ brew install autoconf automake libtool autoconf-archive gettext check pkg-config
 brew install libjpeg freetype fribidi fontconfig giflib libtiff glib dbus libsndfile bullet
 ```
 
-Editor sublime-text & vscode - popular editors used by many developers, if not already installed:
-
-```
-brew cask install sublime-text visual-studio-code
-
-```
-
-iTerm2 - popular 3rd party terminal used by many developers
-
-```
-brew cask install iterm2
-```
-
 3.  To make gettext available, add the following to your $PATH
 
 ```
 export PATH="$(brew --prefix gettext)/bin:$PATH"
 ```
 
+4. Popular editors used by many developers, if not already installed, eventually more
+appropriately installed and managed in containers
 
-## Tools to build and manage containers
-#podman #skopeo #singularity #apptainer #kubernetes #kubectl #nerdctl #lima #qemu #utm #virtualbox #parallels #fusion #packer #vagrant #terraform #vault #hcp #consul  #nomad #openstack #openshift #waypoint #boundary #hashicorp #oracleCloud #amazonCloud #googleCloud #asureCloud #ansible #puppet #CFEngine #vmware #vsphere #esxi #docker #pod #ortellius 
+```
+brew cask install sublime-text visual-studio-code pycharm-community
 
-install podman and skopeo (rhedhat oci mangement tools)
+```
+
+5. Popular 3rd party terminal used by many macOOS developers
+
+```
+brew cask install iterm2
+```
+
+## Tools that can be used to build, maintain and manage containers on a host syste
+#podman #skopeo #singularity #apptainer #kubernetes #kubectl #nerdctl #lima #qemu
+#utm #virtualbox #parallels #fusion #packer #vagrant #terraform #vault #hcp #consul
+#nomad #openstack #openshift #waypoint #boundary #hashicorp #oracleCloud
+#amazonCloud #googleCloud #asureCloud #ansible #puppet #CFEngine #vmware
+#vsphere #esxi #docker #pod #ortellius 
+
+Redhat oci mangement tools
 
 ```
 brew install podman
@@ -111,6 +118,11 @@ skopeo copy --dest-tls-verify=false docker-daemon:docker.io/centos:7 docker://lo
 
 # References:
 
+## definitions
+
+https://dzone.com/articles/containers-landscape-seen-through-oci-and-cncf-standards-lenses
+
+## howto's
 https://phab.enlightenment.org/w/osx/
 
 https://kde.inoki.cc/2019/07/24/DBus/
