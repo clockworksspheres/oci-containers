@@ -96,12 +96,12 @@ brew cask install sublime-text visual-studio-code pycharm-community
 brew cask install iterm2
 ```
 
-## Tools that can be used to build, maintain and manage containers on a host syste
-#podman #skopeo #singularity #apptainer #kubernetes #kubectl #nerdctl #lima #qemu
-#utm #virtualbox #parallels #fusion #packer #vagrant #terraform #vault #hcp #consul
-#nomad #openstack #openshift #waypoint #boundary #hashicorp #oracleCloud
-#amazonCloud #googleCloud #asureCloud #ansible #puppet #CFEngine #vmware
-#vsphere #esxi #docker #pod #ortellius 
+## Tools that can be used to build, maintain and manage containers on a host system
+#podman #skopeo #singularity #apptainer #kubernetes #kubectl #nerdctl #lima 
+#qemu #utm #virtualbox #parallels #fusion #packer #vagrant #terraform
+#vault #hcp #consul #nomad #openstack #openshift #waypoint #boundary
+#hashicorp #oracleCloud #amazonCloud #googleCloud #asureCloud #ansible
+#puppet #CFEngine #vmware #vsphere #esxi #docker #pod #ortellius 
 
 Redhat oci mangement tools
 
@@ -118,7 +118,7 @@ skopeo copy --dest-tls-verify=false docker-daemon:docker.io/centos:7 docker://lo
 
 # References:
 
-## definitions
+## Definitions
 
 https://dzone.com/articles/containers-landscape-seen-through-oci-and-cncf-standards-lenses
 

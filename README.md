@@ -2,6 +2,8 @@
 
 Collection of other very useful container repos, as well as customized tool containers
 
+[OCI](https://dzone.com/articles/containers-landscape-seen-through-oci-and-cncf-standards-lenses) referred to in this repo is as defined by the CNCF, not Oracle's current definition.
+
 Also houses IaC container templates for the IoTHarborAnywhere project.
 
 ## Replicating developer environments for creating containers
@@ -45,4 +47,18 @@ https://cloud.google.com/solutions/best-practices-for-building-containers
 
 https://github.com/wagoodman/dive
 
+
+## Tools that can be used to build, maintain and manage containers on a host system
+#podman #skopeo #singularity #apptainer #kubernetes #kubectl #nerdctl #lima 
+#qemu #utm #virtualbox #parallels #fusion #packer #vagrant #terraform
+#vault #hcp #consul #nomad #openstack #openshift #waypoint #boundary
+#hashicorp #oracleCloud #amazonCloud #googleCloud #asureCloud #ansible
+#puppet #CFEngine #vmware #vsphere #esxi #docker #pod #ortellius 
+
+# References:
+
+## Definitions
+
+http://web.archive.org/web/20150811192521/https://opencontainers.org/ - which Oracle supported.
+https://dzone.com/articles/containers-landscape-seen-through-oci-and-cncf-standards-lenses
 
