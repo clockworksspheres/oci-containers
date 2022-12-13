@@ -73,6 +73,19 @@ brew install autoconf automake libtool autoconf-archive gettext check pkg-config
 brew install libjpeg freetype fribidi fontconfig giflib libtiff glib dbus libsndfile bullet
 ```
 
+Editor sublime-text & vscode - popular editors used by many developers, if not already installed:
+
+```
+brew cask install sublime-text visual-studio-code
+
+```
+
+iTerm2 - popular 3rd party terminal used by many developers
+
+```
+brew cask install iterm2
+```
+
 3.  To make gettext available, add the following to your $PATH
 
 ```
@@ -81,10 +94,9 @@ export PATH="$(brew --prefix gettext)/bin:$PATH"
 
 
 ## Tools to build and manage containers
-#podman #skopeo #singularity #apptainer #kubernetes #kubectl #nerdctl #lima #qemu #utm #virtualbox #parallels #fusion #packer #vagrant #terraform #vault #hcp #consul  #nomad #openstack #openshift #waypoint #boundary #hashicorp #oracleCloud #amazonCloud #googleCloud #asureCloud #ansible #puppet #CFEngine #vmware #docker #pod #ortellius 
+#podman #skopeo #singularity #apptainer #kubernetes #kubectl #nerdctl #lima #qemu #utm #virtualbox #parallels #fusion #packer #vagrant #terraform #vault #hcp #consul  #nomad #openstack #openshift #waypoint #boundary #hashicorp #oracleCloud #amazonCloud #googleCloud #asureCloud #ansible #puppet #CFEngine #vmware #vsphere #esxi #docker #pod #ortellius 
 
 install podman and skopeo (rhedhat oci mangement tools)
-
 
 ```
 brew install podman
@@ -95,18 +107,6 @@ brew install skopeo
 
 ```
 skopeo copy --dest-tls-verify=false docker-daemon:docker.io/centos:7 docker://localhost:5000/centos:7
-#####
-
-#####
-# Install the editor sublime-text - a popular 3rd party editor used by many developers
-# already installed : 
-#     brew tap homebrew/brew-cask
-#     brew tap caskroom/versions
-brew cask install sublime-text
-
-#####
-# Install iterm2 - a popular 3rd party terminal used by many developers
-brew cask install iterm2
 ```
 
 # References:
