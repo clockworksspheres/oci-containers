@@ -59,6 +59,6 @@ https://github.com/wagoodman/dive
 
 ## Definitions
 
-http://web.archive.org/web/20150811192521/https://opencontainers.org/ - which Oracle publically supported.
+http://web.archive.org/web/20150811192521/https://opencontainers.org/ - which Oracle publically supported - 2015 08 11.
 https://dzone.com/articles/containers-landscape-seen-through-oci-and-cncf-standards-lenses
 
