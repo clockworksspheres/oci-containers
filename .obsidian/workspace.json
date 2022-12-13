@@ -1,0 +1,142 @@
+{
+  "main": {
+    "id": "2fb63ae8175a6e68",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ee6b850c881b2f9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4f74a3fd39cd038a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "README-macos-host-setup-ventura.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "c3a82aff10144fab",
+    "type": "split",
+    "children": [
+      {
+        "id": "e80c659cf2145cbd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "18ac7ab5627cf544",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4ef5186db848f023",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#cubectl",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f958023800bd5770",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "74522ba6dc3f1883",
+    "type": "split",
+    "children": [
+      {
+        "id": "5f4140fe08d841cd",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c8edf84062b4e7db",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "README-macos-host-setup-ventura.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "03fd51756ba58187",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "README-macos-host-setup-ventura.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "093c8cf9280efe0d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "83df16f0a776d160",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "README-macos-host-setup-ventura.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "4ef5186db848f023",
+  "lastOpenFiles": []
+}
