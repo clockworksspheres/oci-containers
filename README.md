@@ -2,6 +2,8 @@
 
 Collection of other very useful container repos, as well as customized tool containers
 
+The goal for this repo is to include instructions, scripts, containers, etc., to provide build scripts of containers that consist of tools and services in containers, akin to spack, as well as the instructions, scripts, and/or containers required to provide those tools and services.
+
 [OCI](https://dzone.com/articles/containers-landscape-seen-through-oci-and-cncf-standards-lenses) referred to in this repo is as defined by the CNCF, not Oracle's current definition.
 
 Also houses IaC container templates for the IoTHarborAnywhere project.
@@ -62,3 +64,59 @@ https://github.com/wagoodman/dive
 http://web.archive.org/web/20150811192521/https://opencontainers.org/ - which Oracle publically supported - 2015 08 11.
 https://dzone.com/articles/containers-landscape-seen-through-oci-and-cncf-standards-lenses
 
+
+# Testing the setup
+
+This set of tests should be run for each OS/OS Version that is included in the repository.
+
+
+
+## Smoke test commands and services
+
+Just run the service or command to make sure it runs without errors.
+
+Often the host OS needs to be configured, or the command/service allowed in the firewall or service stack of an OS, before the command or service is allowed to run with appropriate permissions and access in the host operating system.
+
+### Services
+
+#### Docker
+
+#### Kubernetes
+
+#### Openstack
+
+#### Openshift
+
+#### Singularity
+
+### Apps to run Virtual Machines
+
+* UTM
+* VMware Fusion
+* Parallels
+* Oracle Virtualbox
+* QEMU
+* lima
+
+### Commands
+
+#### containerd
+
+* nerdctl
+* 
+
+#### Redhat
+
+* skopeo
+* podman
+
+#### Hashicorp
+
+* packer
+* vagrant
+* terraform
+
+#### Pulumi
+
+*
+*

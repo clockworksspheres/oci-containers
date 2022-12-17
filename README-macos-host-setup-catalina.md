@@ -133,3 +133,47 @@ https://gist.github.com/vfdev-5/b7685371071036cb739f23b3794b5b83
 
 https://github.com/whalebrew/whalebrew
 
+
+
+#### Google Cloud
+
+*
+*
+
+#### Azure - Microsoft Cloud
+
+*
+*
+
+#### Amazon Cloud
+
+*
+*
+
+## Running Builds of Containers
+
+Testing builds of containers need to all be manual for now - there are no instructions, scripts, CI/CD infrastructure, 
+
+### Manually Ensuring availability of container registry
+
+### Manually Basic build of all in one container
+
+### Manually Running build of stacked container
+
+### Manually Running build of entire repo of containers
+
+
+## Attempting to run containers
+
+### Very basic
+
+### Tool Containers
+
+### Service Containers
+
+### CI/CD Containers
+
+# Longer Term Future Goals
+
+* Including spack builds to serve tools and services, as well as provide tools and services for setup, build and test of spack infrastructure
+* *
