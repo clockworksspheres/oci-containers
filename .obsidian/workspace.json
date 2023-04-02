@@ -1,0 +1,174 @@
+{
+  "main": {
+    "id": "d42935b8de33cdb7",
+    "type": "split",
+    "children": [
+      {
+        "id": "211274c7afc738a5",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3c48051ea7047591",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs-containers/cicd-processes-roadmap.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "f452e407758996d5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "cs-containers/os-based/README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "4df152164af54219",
+    "type": "split",
+    "children": [
+      {
+        "id": "e33edb748e6c2132",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "7ba9029c5a69cfcb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f8134e5a5a7c4f4d",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "9c9565dbebc77c41",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "0b12871e75b85e90",
+    "type": "split",
+    "children": [
+      {
+        "id": "40b36d5a789d3062",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c16fa8fa1b4a72be",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "cs-containers/os-based/README.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "763738d697733920",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "cs-containers/os-based/README.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1610f92215cef133",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "08c7a262d0de0623",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "cs-containers/os-based/README.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "f452e407758996d5",
+  "lastOpenFiles": [
+    "cs-containers/cicd-processes-roadmap.md",
+    "cs-containers/os-based/README.md",
+    "cs-containers/os-based/centos/7/tool_stacks/README.md",
+    "literature-collections/IaC/README.md",
+    "design/scratch_notes.md",
+    "README.md",
+    "README-windows10-host-setup.md",
+    "oci-repos/bitnami/bitnami-docker-harbor-portal/README.md",
+    "README-macos-host-setup-catalina.md"
+  ]
+}
